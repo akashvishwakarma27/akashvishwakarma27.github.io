@@ -282,6 +282,7 @@ header img {
 	text-align: center;
 	margin: 0px 0px;
 	width: 38%;
+	padding-top: 30px;
 	padding: 0 20px;
 }
 .project-card > div:nth-child(2) > h1,
