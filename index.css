@@ -199,6 +199,7 @@ header img {
 	margin-bottom: 40px;
 	padding: 0 40px;
 }
+
 #about > div:nth-child(2) > a {
 	padding: 10px 15px;
 	color: black;
@@ -823,4 +824,9 @@ footer > div:nth-child(2) {
 	display: flex;
 	align-items: center;
 	padding-left: 100px;
+}
+
+.home-img {
+	width: 400px;
+	height: 530px;
 }
