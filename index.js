@@ -21,14 +21,14 @@ menu.addEventListener('click', () => {
 
 document.getElementById('resume-button-1').onclick = () => {
 	window.open(
-		'https://drive.google.com/file/d/1phf6HQaA4cyvHQ8Y0OCw3RjRFSxZ8X_H/view?usp=drive_link',
+		'https://drive.google.com/file/d/1IEaQZ-84AfoAtweWqwHMa0gbD5II87MW/view?usp=sharing',
 		`_blank`
 	)
 }
 
 document.getElementById('resume-button-2').onclick = () => {
 	window.open(
-		'https://drive.google.com/file/d/1phf6HQaA4cyvHQ8Y0OCw3RjRFSxZ8X_H/view?usp=drive_link',
+		'https://drive.google.com/file/d/1IEaQZ-84AfoAtweWqwHMa0gbD5II87MW/view?usp=sharing',
 		`_blank`
 	)
 }
