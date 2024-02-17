@@ -1,353 +1,1121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="index.css">
-    <link rel="javascript" href="index.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
-    <title>Akash vishwakarma</title>
-    
-</head>
-<body>
-  <header>
-    <a href="#" class="logo">Akash</a>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="keywords"
+			content="akash vishwakarma linkedin github portfolio website google chrome masaischool sagar java springboot mysql full stack web developer software engineer projects statistics about"
+		/>
+		<meta
+			name="description"
+			content="akash vishwakarma linkedin github portfolio website google chrome masaischool sagar java springboot mysql full stack web developer software engineer projects statistics about"
+		/>
+		<link rel="icon" href="/images/head-logo.png" type="image/icon type" />
 
-    <ul id="nav-menu" class="navbar">
-      <li><a href="#"  class="active nav-link home">Home</a></li>
-      <li><a href="#about" class="nav-link about section">About</a></li>
-      <li><a href="#skills-sec" class="nav-link skills">Skills</a></li>
-      <li><a href="#projects-sec" class="nav-link projects">Projects</a></li>
-      <li><a href="#contact-sec" class="nav-link contact">Contact</a></li>
-      <li>
-        <button onclick="resume()" style="border:none; background-color: white;" id="resume-button-1" >
-          <a  class="menu-btn nav-link resume" id="resume-link-1" style="margin-top:0px" href="Resume/Akash_Vishwakarma_Resume.pdf" target="_blank" download>
-          Resume </a>
-        </button>
-      </li>
-    </ul>
-    <a href="#" class="logo bx bx-menu" id="menu-icon"><span class="material-symbols-outlined">menu</span></a>
-  </header>
-  
-  <div class="main-container">
-  <section id="home" class="margin-t-b main-body">
+		<title>Akash Vishwakarma | Portfolio</title>
 
-    <div id="user-detail-name" class="home-text">
-		<div id="box">
-      <h1>I am Akash Vishwakarma</h1>
-      <p class="java">JAVA BACK-END DEVELOPER</p>
-      <div class="home-links">
-        <div class="resume">
-          <button onclick="resume()" style="border: none;" id="resume-button-2" >
-            <a  class="menu-btn nav-link resume" id="resume-link-2" href="Resume/Akash_Vishwakarma_Resume.pdf" target="_blank" download>
-            Download Resume </a>
-          </button>       
-        </div>
-      <!-- </div> -->
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/calendar.css" />
+		<link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+		/>
+	</head>
 
-      <div class="home-social">
-        <a href="https://github.com/akashvishwakarma27" id="contact-github" target="_blank">
-          <img src="images/github-logo.png" alt="">
-        </a>
-        <a href="https://www.linkedin.com/in/akash-vishwakarma-117129252/" id="contact-linkedin" target="_blank">
-          <img src="images/linked_in.png" alt="">
-        </a>
-      </div>
+	<body>
+		<!-- ========== HEADER ========== -->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="" class="nav_logo"><span>A</span>KASH</a>
+				<div class="nav_menu" id="nav-menu">
+					<ul class="nav_list grid">
+						<li class="nav_item">
+							<a href="#home" class="nav_link nav-link home active-link">
+								<i class="uil uil-estate nav_icon"></i> Home
+							</a>
+						</li>
+						<li class="nav_item">
+							<a href="#about" class="nav_link nav-link about">
+								<i class="uil uil-user nav_icon"></i> About
+							</a>
+						</li>
+						<li class="nav_item">
+							<a href="#skills" class="nav_link nav-link skills">
+								<i class="uil uil-file-alt nav_icon"></i> Skills
+							</a>
+						</li>
+						<li class="nav_item">
+							<a href="#projects" class="nav_link nav-link projects">
+								<i class="uil uil-briefcase-alt nav_icon"></i> Projects
+							</a>
+						</li>
+						<li class="nav_item">
+							<a href="#statistics" class="nav_link">
+								<i class="uil uil-graph-bar nav_icon"></i> Statistics
+							</a>
+						</li>
+						<li class="nav_item">
+							<a href="#contact" class="nav_link nav-link contact">
+								<i class="uil uil-message nav_icon"></i> Contact Me
+							</a>
+						</li>
+						<li class="nav_item">
+							<button id="resume-button-1" class="nav-link resume">
+								<a
+									href="images/Akash-Vishwakarma-Resume.pdf"
+									class="nav_link"
+									id="resume-link-1"
+									onclick="window.open('images/Akash-Vishwakarma-Resume.pdf')"
+									target="_blank"
+									download
+								>
+									<i class="uil uil-download-alt nav_icon"></i> Resume
+								</a>
+							</button>
+						</li>
+					</ul>
+					<i class="uil uil-times nav_close" id="nav-close"></i>
+				</div>
 
-    </div>
-</div>
-</div>
-  </section>
+				<div class="nav_btns">
+					<!-- ===== Theme Changer ===== -->
+					<!-- <i class="uil uil-moon change-theme" id="theme-button"></i> -->
 
+					<div class="nav_toggle" id="nav-toggle">
+						<i class="uil uil-apps"></i>
+					</div>
+				</div>
+			</nav>
+		</header>
 
-<!-- ========================================================================================
-                                       About Section
-============================================================================================= -->
+		<!-- ========== MAIN ========== -->
+		<main class="main">
+			<!-- ========== Home ========== -->
+			<section class="home section" id="home">
+				<div class="home_container container grid">
+					<div class="home_content grid">
+						<div class="home_social">
+							<a
+								id="contact-linkedin"
+								href="https://www.linkedin.com/in/akash-vishwakarma-117129252/"
+								target="_blank"
+								class="home_social-icon"
+							>
+								<i class="uil uil-linkedin-alt"></i>
+							</a>
+							<a
+								id="contact-github"
+								href="https://github.com/akashvishwakarma27"
+								target="_blank"
+								class="home_social-icon"
+							>
+								<i class="uil uil-github-alt"></i>
+							</a>
+							<a
+								id="contact-phone"
+								href="https://twitter.com/Akash_Vishwa_"
+								target="_blank"
+								class="home_social-icon"
+							>
+								<i class="uil uil-twitter-alt"></i>
+							</a>
+						</div>
 
-  <section id="about" class="about section">
-    <div><img src="images/pic.png" class="home-img" alt="display-picture">
-    </div>
-    <div>
-      <h1>About Me</h1>
-      <p id="user-detail-intro">Analytical and detail-oriented aspiring Back-End
-        Java Developer. Capable of writing production-ready code using HTML, CSS, JavaScript on the
-        Front-End and Spring, Hibernate, Java, Maven, SQL on the Back-End.
-        </p>
-      <a href="#contact">Contact Me</a>
-    </div>
-  </section>
+						<div class="home_img">
+							<svg
+								class="home_blob"
+								viewBox="0 0 200 187"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+							>
+								<mask id="mask0" mask-type="alpha">
+									<path
+										d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
+									/>
+								</mask>
+								<g mask="url(#mask0)">
+									<path
+										d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
+									/>
+									<image
+										x="12"
+										y="-4"
+										class="home_blob-img"
+										href="/images/portfolio picture 2.png"
+									/>
+								</g>
+							</svg>
+						</div>
 
-  <section id="skills-sec">
-  </section>
-  
-<!-- ========================================================================================
-                                       Skills Section
-============================================================================================= -->
+						<div class="home_data">
+							<h1 class="home_title" id="user-detail-name">
+								Hi, I'm<br />Akash Vishwakarma
+							</h1>
+							<h3 class="home_subtitle"><span class="auto-type"></span></h3>
+							<p class="home_description">
+								Java Backend Developer along with decent knowledge of Frontend
+								skills such as HTML, CSS & JavaScript.
+							</p>
+							<div class="btn_container">
+								<a href="#contact" class="button button-flex sec_button">
+									Connect with Me <i class="uil uil-message button_icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
 
-  <section id="skills">
-    <h1>Skills</h1>
-    <div class="skills-card">
-      <div class="container grid" id="tech">
-      <div> 
-        <img class="skills-card-img" src="images/java.png" alt="Java"><p class="skills-card-name">Java</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/spring.png" alt="Spring_Boot"><p class="skills-card-name">Spring Boot</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/jdbc.png" alt="JDBC"><p class="skills-card-name">JDBC</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/mysql.png" alt="MySQL"><p class="skills-card-name">MySQL</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/hibernate.png" alt="Hibernate"><p class="skills-card-name">Hibernate</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/javascript.png" alt="JavaScript"><p class="skills-card-name">JavaScript</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/css.png" alt="CSS"><p class="skills-card-name">CSS</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/html.png" alt="HTML"><p class="skills-card-name">HTML</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/github.png" alt="GitHub"><p class="skills-card-name">GitHub</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/vscode.png" alt="VS_Code"><p class="skills-card-name">VS_Code</p>
-      </div>
-      <div>
-        <img class="skills-card-img" src="images/postman.png" alt="Postman"><p class="skills-card-name">Postman</p>
-      </div>
-      <div> 
-        <img class="skills-card-img" src="images/github-logo.png" alt="Git"><p class="skills-card-name">Git</p>
-      </div>
-    </div>
-  </section>
+					<div class="home_scroll">
+						<a href="#about" class="home_scroll-button button-flex">
+							<i class="uil uil-mouse-alt home_scroll-mouse"></i>
+							<span class="home_scroll-name">Scroll Down</span>
+							<i class="uil uil-arrow-down home_scroll-arrow"></i>
+						</a>
+					</div>
+				</div>
+			</section>
 
+			<hr class="hr_break_line" />
 
-<!-- ========================================================================================
-                                       Github Section
-============================================================================================= -->
+			<!-- ========== About ========== -->
+			<section class="about section" id="about">
+				<h2 class="section_title">About Me</h2>
 
-  <section id="github-sec">
-    <div class="github react-activity-calendar">
-      <h1>GitHub Calender</h1>
-      <div>
-          <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-          <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
-  
-          <div class="calendar react-activity-calenda">
-          Loading the data just for you.
-          </div>
-  
-          <script>
-          GitHubCalendar(".calendar", "akashvishwakarma27");
-          // or enable responsive functionality
-          GitHubCalendar(".calendar", "akashvishwakarma27", { responsive: true });
-          </script>
-          <div>
-            <a href="https://github.com/akashvishwakarma27" target="_blank"><img id="github-stats-card" src="https://github-readme-stats.vercel.app/api?username=akashvishwakarma27&show_icons=true&theme=gotham"></a>
-              
-            <a href="https://github.com/akashvishwakarma27" target="_blank"><img  id="github-streak-stats" src="https://github-readme-streak-stats.herokuapp.com?user=akashvishwakarma27&theme=gotham&hide_border=false"></a>
-          </div>
-          <div>
-            <a href="https://github.com/akashvishwakarma27" target="_blank"><img id="github-top-langs"src="https://github-readme-stats.vercel.app/api/top-langs/?username=akashvishwakarma27&layout=compact&theme=gotham"></a>
-          </div>          
-      </div>
-     </div>
-  </section>
-  
+				<div class="about_container container grid">
+					<img src="/images/2.png" alt="" class="about_img home-img" />
+					<div class="about_data">
+						<p class="about_description" id="user-detail-intro">
+							Analytical and detail-oriented aspiring Back-End Java Developer. Capable of writing production-ready code using <b>HTML, CSS, JavaScript</b> on the Front-End and <b>Spring, Hibernate, Java, Maven, SQL</b> on the Back-End.<br /><br />
+							I thrive on tackling challenges and thrive on acquiring new knowledge. I'm on the lookout for a company that shares my passion for continuous improvement and embraces innovative thinking.
+							<br /><br />
+							When I'm not immersed in coding, I enjoy using my mobile to capture the beauty of everyday life. <b>Photography</b> serves as my creative refuge and allows me to preserve meaningful moments.
+						</p>
+						<div class="about_info">
+							<div>
+								<span class="about_info-title">1500+</span>
+								<span class="about_info-name">Hours of Coding</span>
+							</div>
+							<div>
+								<span class="about_info-title">15+</span>
+								<span class="about_info-name">Completed Projects</span>
+							</div>
+							<div>
+								<span class="about_info-title">800+</span>
+								<span class="about_info-name">DSA Problems</span>
+							</div>
+						</div>
 
-<!-- ========================================================================================
-                                       Project Section
-============================================================================================= -->
+						<div class="about_buttons">
+							<button class="button" id="resume-button-2">
+								<a
+									href="/images/Akash-Vishwakarma-Resume.pdf"
+									class="button-flex"
+									id="resume-link-2"
+									onclick="window.open('images/Akash-Vishwakarma-Resume.pdf')"
+									target="_blank"
+									download
+								>
+									My Resume <i class="uil uil-download-alt button_icon"></i>
+								</a>
+							</button>
+						</div>
+					</div>
+				</div>
 
-  <section id="projects-sec">
-  </section>
-  <section id="projects">
-    <h1>Projects</h1>
-    <div class="all-projects">
+				<div class="qualification">
+					<div class="qualification_container container">
+						<div class="qualification_tabs">
+							<div
+								class="qualification_button button-flex qualification_active"
+								data-target="#education"
+							>
+								<i class="uil uil-graduation-cap qualification_icon"></i
+								>&nbsp;Education
+							</div>
+							<div class="qualification_button button-flex" data-target="#work">
+								<i class="uil uil-briefcase-alt qualification_icon"></i
+								>&nbsp;Work
+							</div>
+						</div>
 
+						<div class="qualification_sections">
+							<!-- ========== Qualification Content 1 ========== -->
+							<div
+								class="qualification_content qualification_active"
+								data-content
+								id="education"
+							>
+								<!-- ========== Qualification 1 ========== -->
+								<div class="qualification_data">
+									<div>
+										<h3 class="qualification_title">
+											Full Stack Web Development
+										</h3>
+										<span class="qualification_subtitle"
+											>Masai School, Bengaluru</span
+										>
+										<div class="qualification_calender">
+											<i class="uil uil-calendar-alt"></i>
+											2022 - 2023
+										</div>
+									</div>
+									<div>
+										<span class="qualification_rounder"></span>
+										<span class="qualification_line"></span>
+									</div>
+								</div>
 
-     <div class="project-card">
-      <div>
-        <img src="./project for prtfolio/cims.png" alt="">
-      </div>
-      <div>
-        <h1 class="project-title" >"Crime Information Management System</h1>
-        <p class="project-description">"Introducing an Advanced Crime Management System Developed in Java Core: Empowering Law Enforcement with Enhanced Data Tracking, Management, and Analysis Tools for Safer Communities"</p>
-        <h5  class="project-tech-stack" >Tech Stack: Java </h5>
-        <!-- <p>This is individual Project built  in 4 Days.</p> -->
-        <div>
-          <a href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_" target="_blank" class="project-github-link" >GitHub</a>
-          <a href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_"  target="_blank" class="project-deployed-video project-deployed-link">View Demo</a>
-        </div>
-      </div>
-   </div>
+								<!-- ========== Qualification 2 ========== -->
+								<div class="qualification_data">
+									<div></div>
 
+									<div>
+										<span class="qualification_rounder"></span>
+										<span class="qualification_line"></span>
+									</div>
+									<div>
+										<h3 class="qualification_title">Mechanical Engineering</h3>
+										<h4>(Drop-Out 2017)</h4>
+										<span class="qualification_subtitle">Adina Institut Of Science and Technology, Sagar Madhya Pradesh</span>
+										<div class="qualification_calender">
+											<i class="uil uil-calendar-alt"></i>
+											2014 - 2017
+										</div>
+									</div>
+								</div>
 
-   <div class="project-card">
-    <div>
-      <img src="./project for prtfolio/Customer Support.png" alt="">
-    </div>
-    <div>
-      <h1 class="project-title" >"Online Customer Service Support</h1>
-      <p class="project-description">"This project is an online customer service center built with Spring Boot. It provides a platform for customers to submit requests, complaints, and inquiries which can be resolved by our dedicated support team"</p>
-      <h5  class="project-tech-stack" >Tech Stack: Java | Hibernate | Spring Boot  </h5>
-      <!-- <p>This is individual Project built  in 4 Days.</p> -->
-      <div>
-        <a href="https://github.com/akashvishwakarma27/Online_Customer_Service" target="_blank" class="project-github-link" >GitHub</a>
-        <a href="https://github.com/akashvishwakarma27/Online_Customer_Service#readme"  target="_blank" class="project-deployed-video project-deployed-link">View Demo</a>
-      </div>
-    </div>
- </div>
+								<!-- ========== Qualification 3 ========== -->
+								<div class="qualification_data">
+									<div>
+										<h3 class="qualification_title">Senior Secondary</h3>
+										<span class="qualification_subtitle"
+											>Saraswati Shishu Mandir Sagar</span
+										>
+										<div class="qualification_calender">
+											<i class="uil uil-calendar-alt"></i>
+											2013 - 2014
+										</div>
+									</div>
+								</div>
+							</div>
 
- <div class="project-card">
-  <div>
-    <img src="./project for prtfolio/Wonder Park.png" alt="">
-  </div>
-  <div>
-    <h1 class="project-title" >"WondrWord</h1>
-    <p class="project-description">"Wondr Wrod: A Java Spring Boot-Powered Amusement Park Web App Enhancing Visitor Experience with Ticketing, Trip Planning, and Attraction Information."</p>
-    <h5  class="project-tech-stack" >Tech Stack: Java | Hibernate | Spring Boot | Spring Security </h5>
-    <!-- <p>This is individual Project built  in 4 Days.</p> -->
-    <div>
-      <a href="https://github.com/akashvishwakarma27/Wonder_Park" target="_blank" class="project-github-link" >GitHub</a>
-      <a href="https://github.com/akashvishwakarma27/Wonder_Park"  target="_blank" class="project-deployed-video project-deployed-link">View Demo</a>
-    </div>
-  </div>
-</div>
-  
+							<!-- ========== Qualification Content 2 ========== -->
+							<div class="qualification_content" data-content id="work">
+								<div>
+									<h3 class="Job_title">Social Media Manager
+									</h3>
+									<span class="Job_subtitle"
+										>Transport and Revenue ministry office Sagar, Madhya Pradesh </span
+									>
+									<div class="qualification_calender">
+										<i class="uil uil-calendar-alt"></i>
+										2017 - 2022
+									</div>
+								</div>
 
-<div class="project-card">
-  <div>
-    <img src="./project for prtfolio/The Fashion Store.png" alt="">
-  </div>
-  <div>
-    <h1 class="project-title" >"The Souled Store" E-Commerce website</h1>
-    <p class="project-description">"The Souled Store: Shop trendy apparel, accessories, and merchandise. Express your fandom with unique designs and top-notch quality. Unleash your style!"</p>
-    <h5  class="project-tech-stack" >Tech Stack: HTML | CSS | Javascript </h5>
-    <!-- <p>Collaborative Project built  in 4 Days.</p> -->
-    <div>
-      <a href="https://github.com/akashvishwakarma27/The_Souled_Store" target="_blank" class="project-github-link" >GitHub</a>
-      <a href="https://imaginative-boba-7705ee.netlify.app/"  target="_blank" class="project-deployed-video project-deployed-link">View Demo</a>
-    </div>
-  </div>
-</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-     <div class="project-card">
-      <div>
-        <img src="./project for prtfolio/Shoes locker.png" alt="">
-      </div>
-      <div>
-        <h1 class="project-title" >"Foot Locker  E-Commerce website</h1>
-        <p class="project-description">"Foot Locker: Reliable platform offering authentic shoes and trusted brands."</p>
-        <h5  class="project-tech-stack" >Tech Stack: HTML | CSS | Javascript </h5>
-        <!-- <p>This is individual Project built  in 4 Days.</p> -->
-        <div>
-          <a href="https://github.com/akashvishwakarma27/Foot_Locker" target="_blank" class="project-github-link" >GitHub</a>
-          <a href="https://shimmering-sopapillas-5e41d1.netlify.app/"  target="_blank" class="project-deployed-video project-deployed-link">View Demo</a>
-        </div>
-      </div>
-   </div>
+			<hr class="hr_break_line" />
 
+			<!-- ========== Skills ========== -->
+			<section class="skills section" id="skills">
+				<h2 class="section_title">Skills & Tools</h2>
 
+				<div class="skills_container container grid">
+					<div>
+						<!-- ========== Skills 1 ========== -->
+						<div class="skills_content skills_open">
+							<div class="skills_header">
+								<i class="uil uil-server-network skills_icon"></i>
+								<div>
+									<h1 class="skills_title">Backend Development</h1>
+									<span class="skills_subtitle">6+ months</span>
+								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
+							</div>
 
-   <div class="project-card">
-    <div>
-      <img src="./project for prtfolio/Bad Bath Byond.png" alt="">
-    </div>
-    <div>
-      <h1 class="project-title" >"BBB (Bad bath beyond) " E-Commerce website</h1>
-      <p class="project-description">"BBB: This website sells all types of products for daily uses"</p>
-      <h5  class="project-tech-stack" >Tech Stack: HTML | CSS </h5>
-      <!-- <p>This is individual Project built  in 4 Days.</p> -->
-      <div>
-        <a href="https://github.com/akashvishwakarma27/Bad_bath_beyond" target="_blank" class="project-github-link" >GitHub</a>
-        <a href="https://jovial-vacherin-d24c48.netlify.app/"  target="_blank" class="project-deployed-video project-deployed-link">View Demo</a>
-      </div>
-    </div>
- </div>
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Java</h3>
+										<span><i class="bx bxl-java skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Spring Boot</h3>
+										<span
+											><i class="bx bxl-spring-boot skills-card-img"></i
+										></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">MySQL</h3>
+										<span><i class="bx bxs-data skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-    
-  </section>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">JDBC</h3>
+										<span><i class="bx bx-link skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Hibernate</h3>
+										<span><i class="bx bxs-cube-alt skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-<!-- ========================================================================================
-                                       Contact Section
-============================================================================================= -->
+							</div>
+						</div>
 
-  <section id="contact-sec">
-  </section>
-  <section id="contact">
-    <h1 id="contact-phone">Contact Me</h1>
-    <div>
-      <div class="personal-info">
-          <div>
-              <div id="contact-email">
-                  <div class="info-head">
-                      <i class="fa-regular fa-envelope"></i>
-                      <p>Email</p>
-                  </div>
-                  <p>akashvish4masai@gmail.com</p>
-              </div>
-              <div  >
-                  <div class="info-head">
-                      <i class="fa-solid fa-phone"></i>
-                      <p id="contact-phone" >Phone Number</p>
-                  </div>
-                  <p>+91 8819922727</p>
-              </div>
-          </div>
-      </div>
-      <div class="send-info">
+						<!-- ========== Skills 2 ========== -->
+						<div class="skills_content skills_close">
+							<div class="skills_header">
+								<i class="uil uil-arrow skills_icon"></i>
+								<div>
+									<h1 class="skills_title">Frontend Development</h1>
+									<span class="skills_subtitle">7+ months</span>
+								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
+							</div>
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">HTML</h3>
+										<span><i class="bx bxl-html5 skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-          <div>
-              <div class="input-box">
-                  <p>Name</p>
-                  <input type="text" />
-              </div>
-              <div class="input-box">
-                  <p>Email</p>
-                  <input type="text" />
-              </div>
-              <div class="input-box">
-                  <p>Projects</p>
-                  <input type="text" />
-              </div>
-              <div class="input-box">
-                  <p>Message</p>
-                  <textarea type="text" rows="5"></textarea>
-              </div>
-              <div class="submit-btn">
-                  <button>Send Message</button>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">CSS</h3>
+										<span><i class="bx bxl-css3 skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-              </div>
-          </div>
-      </div>
-  </div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">JavaScript</h3>
+										<span
+											><i class="bx bxl-javascript skills-card-img"></i
+										></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-  </section>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Bootstrap</h3>
+										<span
+											><i class="bx bxl-bootstrap skills-card-img"></i
+										></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-</div>
-  <footer>
-    <div>© Designed by Akash Vishwakarma | 2023</div>
-  </footer>
+					<div>
+						<!-- ========== Skills 3 ========== -->
+						<div class="skills_content skills_close">
+							<div class="skills_header">
+								<i class="uil uil-icons skills_icon"></i>
+								<div>
+									<h1 class="skills_title">Other Tech Tools</h1>
+									<span class="skills_subtitle">10+ months</span>
+								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
+							</div>
 
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">VS Code</h3>
+										<span
+											><i class="bx bxl-visual-studio skills-card-img"></i
+										></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">
+											Spring Tool Suite
+										</h3>
+										<span
+											><i class="bx bxl-spring-boot skills-card-img"></i
+										></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
 
-</body>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">GitHub</h3>
+										<span
+											><i class="uil uil-github-alt skills-card-img"></i
+										></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
+
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">PostMan</h3>
+										<span><i class="bx bxs-pen skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
+
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Replit</h3>
+										<span><i class="bx bx-code-alt skills-card-img"></i></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- ========== Skills 4 ========== -->
+						<div class="skills_content skills_close">
+							<div class="skills_header">
+								<i class="uil uil-illustration skills_icon"></i>
+								<div>
+									<h1 class="skills_title">Design Tools</h1>
+									<span class="skills_subtitle">2+ years</span>
+								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
+							</div>
+
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Canva</h3>
+										<span class="skills-card-img"></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
+
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Lightroom</h3>
+										<span class="skills-card-img"></span>
+									</div>
+									<div class="skills_bar">
+										<span class="skills_percentage"></span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<hr class="hr_break_line" />
+
+			<!-- ========== Projects ========== -->
+			<section class="portfolio section" id="projects">
+				<h2 class="section_title">Projects</h2>
+				<span class="section_subtitle"
+					>Hey visitor, here is a brief overview of some of my previous
+					work...✍️</span
+				>
+
+				<!-- ========== Project Section with double slide Slider ========== -->
+				<!-- ========== Project 1 Slider ========== -->
+				<div class="portfolio_container container swiper-container">
+					<div class="swiper-wrapper">
+						<div class="portfolio_content grid swiper-slide project-card">
+							<img
+								src="/images/project 1 images/cims.png"
+								alt=""
+								class="portfolio_img"
+							/>
+
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project_title project-title">
+									Crime Information Management System
+								</h3>
+								<p class="portfolio_description project-description">
+									"Introducing an Advanced Crime Management System Developed in Java Core: Empowering Law Enforcement with Enhanced Data Tracking, Management, and Analysis Tools for Safer Communities"
+								</p>
+								<p class="project-tech-stack">
+									<b>Tech Stack : </b>JAVA | JDBC | MYSQL 
+								</p>
+								<a
+									href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_"
+									target="_blank"
+									class="project-github-link button button-flex button-small portfolio_button"
+								>
+									Git Repo.
+									<i class="uil uil-github-alt button_icon"></i>
+								</a>
+								<a
+									href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_#introduction"
+									target="_blank"
+									class="button button-flex button-small portfolio_button project-deployed-link"
+								>
+									Demo
+									<i class="uil uil-external-link-alt button_icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+				<!-- ========== Project 2 Slider ========== -->
+				<div class="portfolio_container container swiper-container">
+					<div class="swiper-wrapper">
+						<div class="portfolio_content grid swiper-slide project-card">
+							<img
+								src="/images/project 2 images/Customer.png"
+								alt=""
+								class="portfolio_img"
+							/>
+
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project_title project-title">
+									Online Customer Service Support
+								</h3>
+								<p class="portfolio_description project-description">"An Online Customer Service Centre that provides a platform for
+									customers to submit issues, and inquiries which can be
+									resolved by our dedicated support team."
+								</p>
+								<p class="project-tech-stack">
+									<b>Tech Stack : </b>HTML | CSS | JAVASCRIPT | JAVA | HIBERNATE | SPRINGBOOT
+								</p>
+								<a
+									href="https://github.com/akashvishwakarma27/Online_Customer_Service"
+									target="_blank"
+									class="project-github-link button button-flex button-small portfolio_button"
+								>
+									Git Repo.
+									<i class="uil uil-github-alt button_icon"></i>
+								</a>
+								<a
+									href="https://github.com/akashvishwakarma27/Online_Customer_Service#online-customer-service-support"
+									target="_blank"
+									class="button button-flex button-small portfolio_button project-deployed-link"
+								>
+									Demo
+									<i class="uil uil-external-link-alt button_icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+				<!-- ========== Project 3 Slider ========== -->
+				<div class="portfolio_container container swiper-container">
+					<div class="swiper-wrapper">
+						<div class="portfolio_content grid swiper-slide project-card">
+							<img
+								src="/images/project 3 images/Wonder Park.png"
+								alt=""
+								class="portfolio_img"
+							/>
+
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project_title project-title">
+									Wonder Park
+								</h3>
+								<p class="portfolio_description project-description">
+									"Wondr Wrod: A Java Spring Boot-Powered Wonder Park Web App Enhancing Visitor Experience with Ticketing, Trip Planning, and Attraction Information."
+								</p>
+								<p class="project-tech-stack">
+									<b>Tech Stack : </b>JAVA | HIBERNATE | SPRINGBOOT
+								</p>
+								<a
+									href="https://github.com/akashvishwakarma27/Wonder_Park"
+									target="_blank"
+									class="project-github-link button button-flex button-small portfolio_button"
+								>
+									Git Repo.
+									<i class="uil uil-github-alt button_icon"></i>
+								</a>
+								<a
+									href="https://github.com/akashvishwakarma27/Wonder_Park#acknowledgements"
+									target="_blank"
+									class="button button-flex button-small portfolio_button project-deployed-link"
+								>
+									Demo
+									<i class="uil uil-external-link-alt button_icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+				<!-- ========== Project 4 Slider ========== -->
+				<div class="portfolio_container container swiper-container">
+					<div class="swiper-wrapper">
+						<div class="portfolio_content grid swiper-slide project-card">
+							<img
+								src="/images/project 4 images/The Fashion Store.png"
+								alt=""
+								class="portfolio_img"
+							/>
+
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project_title project-title">
+									The Souled Store
+								</h3>
+								<p class="portfolio_description project-description">
+									"The Souled Store: Shop trendy apparel, accessories, and merchandise. Express your fandom with unique designs and top-notch quality. Unleash your style!"
+								</p>
+								<p class="project-tech-stack">
+									<b>Tech Stack : </b>HTML | CSS | JAVASCRIPT
+								</p>
+								<a
+									href="https://github.com/akashvishwakarma27/The_Souled_Store"
+									target="_blank"
+									class="project-github-link button button-flex button-small portfolio_button"
+								>
+									Git Repo.
+									<i class="uil uil-github-alt button_icon"></i>
+								</a>
+								<a
+									href="https://imaginative-boba-7705ee.netlify.app/"
+									target="_blank"
+									class="button button-flex button-small portfolio_button project-deployed-link"
+								>
+									Demo
+									<i class="uil uil-external-link-alt button_icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+				<!-- ========== Project 5 Slider ========== -->
+				<div class="portfolio_container container swiper-container">
+					<div class="swiper-wrapper">
+						<div class="portfolio_content grid swiper-slide project-card">
+							<img
+								src="/images/project 5 images/Shoes locker.png"
+								alt=""
+								class="portfolio_img"
+							/>
+
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project_title project-title">
+									Foot Locker
+								</h3>
+								<p class="portfolio_description project-description">"Foot Locker: Reliable platform offering authentic shoes and trusted brands."
+								</p>
+								<p class="project-tech-stack">
+									<b>Tech Stack : </b> HTML5 | CSS
+									| JAVASCRIPT
+								</p>
+								<a
+									href="https://github.com/akashvishwakarma27/Foot_Locker"
+									target="_blank"
+									class="project-github-link button button-flex button-small portfolio_button"
+								>
+									Git Repo.
+									<i class="uil uil-github-alt button_icon"></i>
+								</a>
+								<a
+									href="https://shimmering-sopapillas-5e41d1.netlify.app/"
+									target="_blank"
+									class="button button-flex button-small portfolio_button project-deployed-link"
+								>
+									Demo
+									<i class="uil uil-external-link-alt button_icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</section>
+
+			<hr class="hr_break_line" />
+
+			<!-- ========== Statistics ========== -->
+			<section class="statistics section" id="statistics">
+				<h2 class="section_title">Statistics</h2>
+				<span class="section_subtitle">My Github Statistics</span>
+				<div class="statistics_container container grid">
+					<img
+						id="github-stats-card"
+						src="https://github-readme-stats.vercel.app/api?username=akashvishwakarma27&theme=city_light&hide_border=true&include_all_commits=true&count_private=true"
+						alt="github-stats-card"
+					/>
+					<img
+						id="github-top-langs"
+						src="https://github-readme-stats.vercel.app/api/top-langs/?username=akashvishwakarma27&langs_count=4&theme=city_light&hide_border=true&include_all_commits=true&count_private=true&layout=compact"
+						alt="github-top-langs"
+					/>
+					<img
+						id="github-streak-stats"
+						src="https://github-readme-streak-stats.herokuapp.com/?user=akashvishwakarma27&ring=5094f0&currStreakLabel=5094f0&fire=5094f0&theme=city_light&hide_border=true"
+						alt="github-streak-stats"
+					/>
+				</div>
+				<span class="section_subtitle">Github Calendar</span>
+				<div class="react-activity-calendar calendar">
+					<!-- Data will be fetched over here -->
+					<p>
+						It appears that the API is retrieving contribution data more slowly
+						than anticipated.
+					</p>
+					<br />
+					<p>
+						Visit
+						<a
+							href="https://github.com/akashvishwakarma27"
+							target="_blank"
+							style="text-decoration: none; color: var(--first-color)"
+							>akashvishwakarma27</a
+						>
+						to see it now.
+					</p>
+				</div>
+			</section>
+
+			<hr class="hr_break_line" />
+
+			<!-- ========== Contact ========== -->
+			<section class="contact section" id="contact">
+				<h2 class="section_title">Contact Me</h2>
+
+				<div class="contact_container container grid">
+					<div>
+						<p class="contact_message">
+							Feel free to drop a message if you have any suggestions or
+							collaboration ideas, and we'll get in touch.
+						</p>
+						<div class="contact_information">
+							<i class="uil uil-phone-alt contact_icon"></i>
+
+							<div>
+								<h3 class="contact_title">Call Me</h3>
+								<span class="contact_subtitle">+918819922727</span>
+							</div>
+						</div>
+
+						<div class="contact_information">
+							<i class="uil uil-envelope-alt contact_icon"></i>
+
+							<div>
+								<h3 class="contact_title">Email</h3>
+								<span class="contact_subtitle"
+									>akashvish4masai@gmail.com</span
+								>
+							</div>
+						</div>
+
+						<div class="contact_information">
+							<i class="uil uil-location-pin-alt contact_icon"></i>
+
+							<div>
+								<h3 class="contact_title">Location</h3>
+								<span class="contact_subtitle"
+									>Sagar, Madhya Pradesh</span
+								>
+							</div>
+						</div>
+
+						<div class="contact_information">
+							<i class="uil uil-linkedin-alt contact_icon"></i>
+
+							<div>
+								<h3 class="contact_title">LinkedIn</h3>
+								<a
+									href="https://www.linkedin.com/in/akash-vishwakarma-117129252/"
+									target="_blank"
+								>
+									<span class="contact_subtitle"
+										>www.linkedin.com/in/akash-vishwakarma-117129252</span
+									>
+								</a>
+							</div>
+						</div>
+					</div>
+					<form
+						action="https://formspree.io/f/mwkjzwvn"
+						method="post"
+						class="contact_form grid"
+					>
+						<div class="contact_inputs grid">
+							<div class="contact_content">
+								<label for="name" class="contact_label">Name</label>
+								<input name="name" type="text" class="contact_input" />
+							</div>
+							<div class="contact_content">
+								<label for="email" class="contact_label">Email</label>
+								<input
+									name="email"
+									type="email"
+									class="contact_input"
+									required
+								/>
+							</div>
+						</div>
+						<div class="contact_content">
+							<label for="project" class="contact_label">Project</label>
+							<input name="project" type="text" class="contact_input" />
+						</div>
+						<div class="contact_content">
+							<label for="message" class="contact_label">Message</label>
+							<textarea
+								name="message"
+								id=""
+								cols="0"
+								rows="7"
+								class="contact_input"
+							></textarea>
+						</div>
+						<div>
+							<button class="button button-flex" type="submit">
+								Send Message
+								<i class="uil uil-message button_icon"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<hr class="hr_break_line" />
+
+			<span class="section_subtitle">🎯 My North Star 🎯</span>
+			<p>
+				Above all, I'm on a relentless pursuit to be the happiest, most
+				successful, and finest rendition of myself, with a heart brimming with
+				purpose.
+			</p>
+
+			<hr class="hr_break_line" />
+		
+
+		<!-- ========== FOOTER ========== -->
+		<footer class="footer">
+			<div class="footer_bg">
+				<img src="/images/3.png" alt="" />
+				<div>
+					<div class="footer_container container grid">
+						<div>
+							<h1 class="footer_title">Akash Vishwakarma</h1>
+							<span class="footer_subtitle">Java Backend Developer</span>
+						</div>
+						<div class="footer_socials">
+							<a
+								href="https://github.com/akashvishwakarma27"
+								target="_blank"
+								class="footer_social"
+							>
+								<i class="uil uil-github-alt"></i>
+							</a>
+							<a
+								href="https://www.linkedin.com/in/akash-vishwakarma-117129252/"
+								target="_blank"
+								class="footer_social"
+							>
+								<i class="uil uil-linkedin-alt"></i>
+							</a>
+							<a
+								href="https://twitter.com/Akash_Vishwa_"
+								target="_blank"
+								class="footer_social"
+							>
+								<i class="uil uil-linkedin-alt"></i>
+							</a>
+						</div>
+					</div>
+					<div>
+						<p class="footer_copy">Made with ❤️ by &#169; Akash Vishwakarma</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- ========== SCROLL TOP ========== -->
+		<a href="#home" class="scrollup" id="scroll-up">
+			<i class="uil uil-arrow-up scrollup_icon"></i>
+		</a>
+
+		<!-- ==================== JAVASCRIPT LINKED FILES ==================== -->
+		<script src="/script/script.js"></script>
+		<script src="/script/swiper-bundle.min.js"></script>
+		<script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+		<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+		<script src="https://unpkg.com/scrollreveal"></script>
+
+		<!-- ==================== AUTO-TYPE SCRIPT ==================== -->
+		<script>
+			var typed = new Typed('.auto-type', {
+				strings: [
+					'Java Backend Developer',
+					'Photography',
+					'Calligraphy',
+				],
+				typeSpeed: 50,
+				backSpeed: 50,
+				loop: true,
+			})
+		</script>
+
+		<!-- ==================== PROJECT SLIDER ==================== -->
+		<script>
+			let swiperPortfolio = new Swiper('.swiper-container', {
+				cssMode: true,
+				loop: true,
+
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				mousewheel: true,
+				keyboard: true,
+			})
+
+			var swiper = new Swiper('.mySwiper', {
+				direction: 'vertical',
+				slidesPerView: 1,
+				spaceBetween: 30,
+				mousewheel: true,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+			})
+		</script>
+
+		<!-- ==================== GITHUB CALENDER ==================== -->
+		<script>
+			GitHubCalendar('.calendar', 'akashvishwakarma27', {
+				responsive: true,
+				global_stats: true,
+				tooltips: true,
+			})
+		</script>
+
+		<!-- ==================== SCROLL REVEAL ANIMATION ==================== -->
+		<script>
+			const sr = ScrollReveal({
+				origin: 'top',
+				distance: '50px',
+				duration: 2000,
+				// reset: true
+			})
+
+			sr.reveal('.home_data', { delay: 200 })
+			sr.reveal('.home_img', { delay: 200 })
+			sr.reveal('.home_social', { delay: 200 })
+			sr.reveal('.home_social-icon', { interval: 100 })
+			sr.reveal('.home_scroll', { delay: 200 })
+
+			sr.reveal('.about_img', { delay: 200 })
+			sr.reveal('.about_data', { delay: 200 })
+			sr.reveal('.about_info', { interval: 200 })
+			sr.reveal('.about_buttons', { interval: 100 })
+			sr.reveal('.qualification', { delay: 200 })
+
+			sr.reveal('.skills_container', {})
+			sr.reveal('.skills_content', { delay: 200 })
+			sr.reveal('.skills_header', { interval: 100 })
+
+			sr.reveal('.section_subtitle', { delay: 200 })
+			sr.reveal('.portfolio_container', { delay: 200 })
+
+			sr.reveal('.statistics_container>img', { interval: 100 })
+			sr.reveal('.calendar', { delay: 200 })
+
+			sr.reveal('.contact_container', {})
+			sr.reveal('.contact_information', { interval: 100 })
+			sr.reveal('form>div', { interval: 200 })
+
+			sr.reveal('.footer', {})
+			sr.reveal('.footer_container>div', { interval: 100 })
+		</script>
+	</body>
 </html>
-<script src="index.js">
-
-
-</script>
