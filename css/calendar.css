@@ -31,18 +31,16 @@ rect.ContributionCalendar-day[data-level='4'] {
 }
 
 .calendar {
-	margin: 2rem auto;
-	width: 90%;
-	max-width: 900px;
-	min-height: 200px;
-	padding: 2rem 1rem;
+	margin: 0 auto;
+	width: 80%;
+	min-height: 243px;
+	padding: 1.5rem;
 	border-radius: 6px;
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 	box-shadow: rgba(100, 100, 111, 0.15) 0px 5px 25px 0px;
 	transition: 0.5s;
-	background-color: #f8f9fa;
-	overflow: hidden;
+	background-color: skyblue;
 }
 
 .calendar:hover {
@@ -86,16 +84,8 @@ rect.ContributionCalendar-day[data-level='4'] {
 }
 
 .calendar-graph {
-	padding: 1rem 0;
+	padding: 5px 0 0;
 	text-align: center;
-	width: 100%;
-	overflow-x: auto;
-}
-
-.calendar-graph svg {
-	width: 100%;
-	height: auto;
-	max-width: 100%;
 }
 
 .contrib-column {
@@ -224,59 +214,27 @@ text.ContributionCalendar-label {
 	.calendar {
 		width: 95%;
 		min-height: 150px;
-		padding: 1rem;
-		margin: 1rem auto;
-	}
-
-	.calendar-graph {
-		padding: 0.5rem 0;
+		padding: 10px;
 	}
 
 	.text-small {
-		font-size: 10px;
+		font-size: 7px;
 	}
 
 	.contrib-number {
-		font-size: 12px;
+		font-size: 10px;
 	}
 
 	.text-muted {
-		font-size: 10px;
+		font-size: 7px;
 	}
 
 	.float-right {
-		font-size: 10px;
-	}
-
-	.d-inline-block {
-		width: 8px;
-		height: 8px;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.calendar {
-		width: 98%;
-		padding: 0.75rem;
-		margin: 0.5rem auto;
-	}
-
-	.calendar-graph svg {
-		overflow-x: auto;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.calendar {
-		padding: 0.5rem;
-		min-height: 120px;
-	}
-
-	.text-small {
 		font-size: 8px;
 	}
 
-	.contrib-number {
-		font-size: 10px;
+	.d-inline-block {
+		width: 5px;
+		height: 5px;
 	}
 }
