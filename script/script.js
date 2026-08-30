@@ -23,23 +23,39 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener('click', linkAction))
 
-/*==================== SKILLS ====================*/
+/*==================== SKILLS (accordion) ====================*/
 const skillsContent = document.getElementsByClassName('skills_content')
-skillsHeader = document.querySelectorAll('.skills_header')
+const skillsHeader = document.querySelectorAll('.skills_header')
 
 function toggleSkills() {
-	let itemClass = this.parentNode.className
+	const panel = this.parentNode
+	const willOpen = panel.className.indexOf('skills_close') !== -1
 
-	for (i = 0; i < skillsContent.length; i++) {
+	for (let i = 0; i < skillsContent.length; i++) {
 		skillsContent[i].className = 'skills_content skills_close'
+		const h = skillsContent[i].querySelector('.skills_header')
+		if (h) h.setAttribute('aria-expanded', 'false')
 	}
-	if (itemClass == 'skills_content skills_close') {
-		this.parentNode.className = 'skills_content skills_open'
+	if (willOpen) {
+		panel.className = 'skills_content skills_open'
+		this.setAttribute('aria-expanded', 'true')
 	}
 }
 
 skillsHeader.forEach((element) => {
+	element.setAttribute('tabindex', '0')
+	element.setAttribute('role', 'button')
+	element.setAttribute(
+		'aria-expanded',
+		element.parentNode.className.indexOf('skills_open') !== -1 ? 'true' : 'false'
+	)
 	element.addEventListener('click', toggleSkills)
+	element.addEventListener('keydown', function (e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault()
+			toggleSkills.call(this)
+		}
+	})
 })
 
 /*==================== QUALIFICATION ====================*/
@@ -71,16 +87,16 @@ function scrollActive() {
 	sections.forEach((current) => {
 		const sectionHeight = current.offsetHeight
 		const sectionTop = current.offsetTop - 50
-		sectionId = current.getAttribute('id')
+		const sectionId = current.getAttribute('id')
+		const link = document.querySelector(
+			'.nav_menu a[href*="' + sectionId + '"]'
+		)
+		if (!link) return
 
 		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-			document
-				.querySelector('.nav_menu a[href*=' + sectionId + ']')
-				.classList.add('active-link')
+			link.classList.add('active-link')
 		} else {
-			document
-				.querySelector('.nav_menu a[href*=' + sectionId + ']')
-				.classList.remove('active-link')
+			link.classList.remove('active-link')
 		}
 	})
 }
@@ -104,38 +120,91 @@ function scrollUp() {
 }
 window.addEventListener('scroll', scrollUp)
 
-/*==================== DARK LIGHT THEME ====================*/
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
+/*==================== DARK / LIGHT THEME ====================*/
+// The initial theme is set pre-paint by an inline script in <head>.
+;(function () {
+	const btn = document.getElementById('theme-toggle')
+	if (!btn) return
+	const root = document.documentElement
+	const icon = btn.querySelector('i')
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
+	function paint(theme) {
+		root.setAttribute('data-theme', theme)
+		const dark = theme === 'dark'
+		btn.setAttribute('aria-pressed', String(dark))
+		btn.setAttribute(
+			'aria-label',
+			dark ? 'Switch to light theme' : 'Switch to dark theme'
+		)
+		if (icon) {
+			icon.classList.toggle('uil-sun', dark)
+			icon.classList.toggle('uil-moon', !dark)
+		}
+	}
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-	document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () =>
-	themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+	paint(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light')
 
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-	// If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-	document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
-		darkTheme
-	)
-	themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](
-		iconTheme
-	)
+	btn.addEventListener('click', () => {
+		const next =
+			root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+		try {
+			localStorage.setItem('theme', next)
+		} catch (e) {}
+		paint(next)
+	})
+
+	// follow the OS if the user never made an explicit choice
+	const mq = window.matchMedia('(prefers-color-scheme: dark)')
+	mq.addEventListener &&
+		mq.addEventListener('change', (e) => {
+			try {
+				if (localStorage.getItem('theme')) return
+			} catch (err) {}
+			paint(e.matches ? 'dark' : 'light')
+		})
+})()
+
+/*==================== CONTACT FORM (AJAX + inline status) ====================*/
+const contactForm = document.getElementById('contact-form')
+const contactStatus = document.getElementById('contact-status')
+
+if (contactForm && contactStatus && window.fetch) {
+	const setStatus = (msg, ok) => {
+		contactStatus.textContent = msg
+		contactStatus.hidden = false
+		contactStatus.classList.toggle('is-ok', !!ok)
+		contactStatus.classList.toggle('is-error', !ok)
+	}
+
+	contactForm.addEventListener('submit', async (e) => {
+		e.preventDefault()
+		const btn = contactForm.querySelector('button[type="submit"]')
+		const original = btn.innerHTML
+		btn.disabled = true
+		btn.textContent = 'Sending…'
+
+		try {
+			const res = await fetch(contactForm.action, {
+				method: 'POST',
+				body: new FormData(contactForm),
+				headers: { Accept: 'application/json' },
+			})
+			if (res.ok) {
+				contactForm.reset()
+				setStatus("Thanks — your message has been sent. I'll get back to you soon.", true)
+			} else {
+				const data = await res.json().catch(() => ({}))
+				const detail =
+					data && data.errors && data.errors.length
+						? data.errors.map((x) => x.message).join(', ')
+						: 'Something went wrong. Please email me directly instead.'
+				setStatus(detail, false)
+			}
+		} catch (err) {
+			setStatus('Network error — please email me directly instead.', false)
+		} finally {
+			btn.disabled = false
+			btn.innerHTML = original
+		}
+	})
 }
-
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-	// Add or remove the dark / icon theme
-	document.body.classList.toggle(darkTheme)
-	themeButton.classList.toggle(iconTheme)
-	// We save the theme and the current icon that the user chose
-	localStorage.setItem('selected-theme', getCurrentTheme())
-	localStorage.setItem('selected-icon', getCurrentIcon())
-})

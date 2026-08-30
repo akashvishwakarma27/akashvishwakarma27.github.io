@@ -4,20 +4,57 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Akash Vishwakarma" />
+		<meta name="theme-color" content="#0b1220" />
+		<link rel="canonical" href="https://akashvishwakarma27.github.io/" />
 		<meta
 			name="keywords"
-			content="akash vishwakarma linkedin github portfolio website google chrome masaischool sagar java springboot mysql full stack web developer software engineer projects statistics about"
+			content="akash vishwakarma email developer salesforce marketing cloud sfmc ampscript ssjs journey builder automation studio cloudpages ewizard aem veeva vault campaign automation pharma healthcare life sciences gurugram portfolio"
 		/>
 		<meta
 			name="description"
-			content="akash vishwakarma linkedin github portfolio website google chrome masaischool sagar java springboot mysql full stack web developer software engineer projects statistics about"
+			content="Akash Vishwakarma — Email Developer specializing in Salesforce Marketing Cloud (SFMC): AMPscript, SSJS, Journey Builder, Automation Studio and CloudPages for global pharmaceutical and life-sciences brands."
 		/>
-		<link rel="icon" href="/images/head-logo.png" type="image/icon type" />
 
-		<title>Akash Vishwakarma | Portfolio</title>
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Akash Vishwakarma" />
+		<meta property="og:title" content="Akash Vishwakarma — Email Developer, Salesforce Marketing Cloud" />
+		<meta
+			property="og:description"
+			content="SFMC email developer — AMPscript, SSJS, Journey Builder, Automation Studio, CloudPages. Campaign execution, personalization and automation for pharma & life-sciences brands."
+		/>
+		<meta property="og:url" content="https://akashvishwakarma27.github.io/" />
+		<meta property="og:image" content="https://akashvishwakarma27.github.io/images/og-image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Akash Vishwakarma — Email Developer, Salesforce Marketing Cloud" />
+		<meta name="twitter:description" content="SFMC email developer — AMPscript, SSJS, Journey Builder, Automation Studio, CloudPages." />
+		<meta name="twitter:image" content="https://akashvishwakarma27.github.io/images/og-image.png" />
+
+		<link rel="icon" href="/images/head-logo.png" type="image/png" />
+
+		<title>Akash Vishwakarma — Email Developer | Salesforce Marketing Cloud</title>
+
+		<script>
+			// set theme before first paint (no flash)
+			(function () {
+				try {
+					var t = localStorage.getItem('theme');
+					if (t !== 'dark' && t !== 'light') {
+						t = window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+					}
+					document.documentElement.setAttribute('data-theme', t);
+				} catch (e) {}
+			})();
+		</script>
 
 		<link rel="stylesheet" href="/css/style.css" />
-		<link rel="stylesheet" href="/css/calendar.css" />
 		<link rel="stylesheet" href="/css/swiper-bundle.min.css" />
 		<link
 			rel="stylesheet"
@@ -27,13 +64,14 @@
 			rel="stylesheet"
 			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 		/>
+		<link rel="stylesheet" href="/css/enhance.css" />
 	</head>
 
 	<body>
 		<!-- ========== HEADER ========== -->
 		<header class="header" id="header">
 			<nav class="nav container">
-				<a href="" class="nav_logo"><span>A</span>KASH</a>
+				<a href="#home" class="nav_logo"><span>A</span>KASH</a>
 				<div class="nav_menu" id="nav-menu">
 					<ul class="nav_list grid">
 						<li class="nav_item">
@@ -57,37 +95,37 @@
 							</a>
 						</li>
 						<li class="nav_item">
-							<a href="#statistics" class="nav_link">
-								<i class="uil uil-graph-bar nav_icon"></i> Statistics
-							</a>
-						</li>
-						<li class="nav_item">
 							<a href="#contact" class="nav_link nav-link contact">
 								<i class="uil uil-message nav_icon"></i> Contact Me
 							</a>
 						</li>
-						<li class="nav_item">
-							<button id="resume-button-1" class="nav-link resume">
-								<a
-									href="https://drive.google.com/file/d/1ZkNjbcSiKCK-3gyjvUDD_jrUFUS3BxGO/view?usp=sharing"
-									class="nav_link"
-									id="resume-link-1"
-									onclick="window.open('https://drive.google.com/file/d/1ZkNjbcSiKCK-3gyjvUDD_jrUFUS3BxGO/view?usp=sharing')"
-									target="_blank"
-									download
-								>
-									<i class="uil uil-download-alt nav_icon"></i> Resume
-								</a>
-							</button>
+						<li class="nav_item nav_item--cta">
+							<a
+								href="/Akash_Vishwakarma_Resume.pdf"
+								class="nav_link nav_resume"
+								id="resume-link-1"
+								target="_blank"
+								rel="noopener"
+								download
+							>
+								<i class="uil uil-download-alt nav_icon"></i> Resume
+							</a>
 						</li>
 					</ul>
 					<i class="uil uil-times nav_close" id="nav-close"></i>
 				</div>
 
 				<div class="nav_btns">
-					<!-- ===== Theme Changer ===== -->
-					<!-- <i class="uil uil-moon change-theme" id="theme-button"></i> -->
-
+					<button
+						type="button"
+						class="theme-toggle"
+						id="theme-toggle"
+						aria-label="Switch to dark theme"
+						aria-pressed="false"
+						title="Toggle dark / light"
+					>
+						<i class="uil uil-moon" aria-hidden="true"></i>
+					</button>
 					<div class="nav_toggle" id="nav-toggle">
 						<i class="uil uil-apps"></i>
 					</div>
@@ -129,39 +167,11 @@
 						</div>
 
 						<div class="home_img">
-							<svg
-								class="home_blob"
-								viewBox="0 0 200 187"
-								xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink"
-							>
-								<mask id="mask0" mask-type="alpha">
-									<path
-										d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-									/>
-								</mask>
-								<g mask="url(#mask0)">
-									<path
-										d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-										fill="var(--first-color)"
-									/>
-									<image
-										x="0"
-										y="10"
-										width="190"
-										height="220"
-										preserveAspectRatio="xMidYMid slice"
-										class="home_blob-img"
-										href="/images/Image_1.png"
-									/>
-								</g>
-							</svg>
+							<img
+								src="/images/Akash_Vishwakarma_Profile_Picture.png"
+								alt="Akash Vishwakarma"
+								class="home_photo"
+							/>
 						</div>
 
 						<div class="home_data">
@@ -170,7 +180,7 @@
 							</h1>
 							<h3 class="home_subtitle"><span class="auto-type"></span></h3>
 							<p class="home_description">
-								Email Developer with hands-on experience in Salesforce Marketing Cloud (SFMC), specializing in campaign execution, personalization, and automation for global clients like GSK, Bayer, and Roche.
+								Email Developer with 2+ years of experience in Salesforce Marketing Cloud (SFMC), specializing in campaign execution, personalization, and automation for global pharmaceutical, healthcare, and life-sciences brands.
 							</p>
 							<div class="btn_container">
 								<a href="#contact" class="button button-flex sec_button">
@@ -194,41 +204,44 @@
 
 			<!-- ========== About ========== -->
 			<section class="about section" id="about">
-				<h2 class="section_title">About Me</h2>
+				<div class="section_head container">
+					<span class="section_eyebrow">About Me</span>
+					<h2 class="section_title">A developer's approach to email marketing</h2>
+				</div>
 
 				<div class="about_container container grid">
-					<img src="/images/Image_4.png" alt="" class="about_img home-img" />
+					<img src="/images/Akash_Vishwakarma_Profile_Picture_2.png" alt="Akash Vishwakarma" class="about_img home-img" />
 					<div class="about_data">
 						<p class="about_description" id="user-detail-intro">
-							Results-driven Email Developer with hands-on experience in Salesforce Marketing Cloud (SFMC), specializing in campaign execution, personalization, and automation. Skilled in AMPscript, SQL, and responsive email development, with a strong focus on delivering high-quality, compliant campaigns across global clients such as GSK, Bayer, and Roche.<br /><br />
+							Results-driven Email Developer with 2+ years of hands-on experience in Salesforce Marketing Cloud (SFMC), eWizard, Veeva Vault, and AEM, specializing in campaign execution, personalization, and automation. Skilled in AMPscript, SQL, SSJS, and responsive email development, with a strong focus on delivering high-quality, compliant campaigns for global pharmaceutical, healthcare, and life-sciences brands.<br /><br />
 							With a solid foundation in full-stack development (Java, Spring Boot, HTML, CSS, JavaScript), I bring a technical mindset to marketing automation—enabling efficient workflows, dynamic content personalization, and reliable campaign delivery.<br /><br />
-							I enjoy solving complex problems, optimizing processes, and continuously learning new technologies in the marketing tech space. I'm currently focused on deepening my SFMC expertise and building scalable, data-driven customer engagement solutions.
+							I enjoy solving complex problems, optimizing processes, and continuously learning new technologies in the marketing tech space. I'm currently focused on deepening my SFMC expertise toward the Marketing Cloud Email Specialist certification and building scalable, data-driven customer engagement solutions.
 							<br /><br />
 							Outside of work, I enjoy capturing everyday moments through photography, which helps me stay creative and detail-oriented.
 						</p>
 						<div class="about_info">
 							<div>
-								<span class="about_info-title">1500+</span>
-								<span class="about_info-name">Hours of Coding</span>
+								<span class="about_info-title">20+</span>
+								<span class="about_info-name">Campaigns / Month</span>
 							</div>
 							<div>
-								<span class="about_info-title">15+</span>
-								<span class="about_info-name">Completed Projects</span>
+								<span class="about_info-title">100K+</span>
+								<span class="about_info-name">Subscribers Personalized</span>
 							</div>
 							<div>
-								<span class="about_info-title">800+</span>
-								<span class="about_info-name">DSA Problems</span>
+								<span class="about_info-title">99%</span>
+								<span class="about_info-name">QA Defect Reduction</span>
 							</div>
 						</div>
 
 						<div class="about_buttons">
 							<button class="button" id="resume-button-2">
 								<a
-									href="https://drive.google.com/file/d/1ZkNjbcSiKCK-3gyjvUDD_jrUFUS3BxGO/view?usp=sharing"
+									href="/Akash_Vishwakarma_Resume.pdf"
 									class="button-flex"
 									id="resume-link-2"
-									onclick="window.open('https://drive.google.com/file/d/1ZkNjbcSiKCK-3gyjvUDD_jrUFUS3BxGO/view?usp=sharing')"
 									target="_blank"
+									rel="noopener"
 									download
 								>
 									My Resume <i class="uil uil-download-alt button_icon"></i>
@@ -238,139 +251,145 @@
 					</div>
 				</div>
 
-				<div class="qualification">
-					<div class="qualification_container container">
-						<div class="qualification_tabs">
-							<div
-								class="qualification_button button-flex qualification_active"
-								data-target="#education"
-							>
-								<i class="uil uil-briefcase-alt qualification_icon"></i
-								>&nbsp;Work Experience
-							</div>
-						</div>
-
-						<div class="qualification_sections">
-							<!-- ========== Qualification Content 2 ========== -->
-							<div
-								class="qualification_content qualification_active"
-								data-content
-								id="education"
-							>
-								<!-- ========== Qualification 1 ========== -->
-								<div class="qualification_data">
-									<div>
-										<h1 class="qualification_title">Email Developer – Campaign Execution (SFMC / AEM / eWizard)</h1>
-										<h2><span class="qualification_subtitle">WPP Production</span></h2>
-										<p class="pera" style="font-size: 14px;">	
-											• Executed end-to-end email campaigns using SFMC and eWizard<br>
-											• Built automated journeys (triggered and drip) in Journey Builder<br>
-											• Implemented AMPscript and SQL-based personalization<br>
-											• Reduced QA errors by 99% through rigorous testing<br>
-											• Improved email rendering efficiency across devices and clients<br>
-											• Ensured compliance (GDPR, CAN-SPAM) and high deliverability
-										</p>
-										<span class="qualification_subtitle">Gurugram, Haryana, India</span>
-										<div class="qualification_calender">
-											<i class="uil uil-calendar-alt"></i>
-											May 2024 – Present
-										</div>
-
-									</div>
+				<div class="resume container">
+					<div class="resume_col">
+						<h3 class="resume_heading"><i class="uil uil-briefcase-alt"></i> Work Experience</h3>
+						<div class="resume_timeline">
+							<article class="resume_item">
+								<div class="resume_top">
+									<h4 class="resume_role">Email Developer — Campaign Execution (SFMC / AEM / eWizard)</h4>
+									<span class="resume_date">May 2024 – Present</span>
 								</div>
-
-<br>
-<br>
-
-								<!-- ========== Qualification 3 ========== -->
-								<div class="qualification_data">
-									<div>
-										<h1 class="qualification_title">Social Media Manager</h1>
-										<h2><span class="qualification_subtitle">Transport and Revenue ministry office Sagar, Madhya Pradesh</span></h2>
-										<p class="pera" style="font-size: 14px;">	
-											Social Media Managers develop and implement
-										social media strategies, create engaging content,
-										monitor analytics, and manage online brand presence
-										for businesses.
-										</p>
-										<span class="qualification_subtitle">Sagar Madhya Pradesh India</span>
-
-										<div class="qualification_calender">
-											<i class="uil uil-calendar-alt"></i>
-											Feb 2019 – Sep 2023
-										</div>
-									</div>
+								<p class="resume_meta">WPP Production &middot; Gurugram, India</p>
+								<ul class="resume_points">
+									<li>Designed and deployed 20+ responsive email campaigns per month using SFMC and eWizard for global pharmaceutical and life-sciences brands.</li>
+									<li>Built multi-step journeys (Welcome, Nurture, Re-engagement, Transactional) in Journey Builder, cutting manual deployment time by 40%.</li>
+									<li>Developed Automation Studio workflows with SQL Query Activities, Data Imports, and File Transfers.</li>
+									<li>Engineered AMPscript and SQL personalization for 100,000+ subscribers across 15+ email clients.</li>
+									<li>Built CloudPages landing pages and preference centres with SSJS.</li>
+									<li>Reduced QA defect rate by 99% via Litmus and Email on Acid testing; 98%+ cross-client rendering accuracy.</li>
+									<li>Managed the full campaign lifecycle in SFMC and Veeva Vault, meeting 100% of deadlines.</li>
+									<li>Ensured GDPR, CAN-SPAM, SPF, DKIM, and DMARC compliance.</li>
+								</ul>
+							</article>
+							<article class="resume_item">
+								<div class="resume_top">
+									<h4 class="resume_role">Social Media Manager</h4>
+									<span class="resume_date">Feb 2019 – Sep 2023</span>
 								</div>
-							</div>
-							</div>
+								<p class="resume_meta">Transport &amp; Revenue Ministry Office &middot; Sagar, MP, India</p>
+								<ul class="resume_points">
+									<li>Planned and published social media content across 3+ platforms, growing audience engagement by 30% over two years.</li>
+									<li>Analyzed reach, impressions, and CTR to improve post performance by 25%.</li>
+									<li>Coordinated with 5+ government stakeholders to align digital communications with public outreach initiatives.</li>
+								</ul>
+							</article>
 						</div>
 					</div>
-
-					<hr class="hr_break_line" />
-
-
-				<div class="qualification">
-					<div class="qualification_container container">
-						<div class="qualification_tabs">
-							<div
-								class="qualification_button button-flex qualification_active"
-								data-target="#education"
-							>
-								<i class="uil uil-graduation-cap qualification_icon"></i
-								>&nbsp;Education
-							</div>
+					<div class="resume_col">
+						<h3 class="resume_heading"><i class="uil uil-graduation-cap"></i> Education</h3>
+						<div class="resume_timeline">
+							<article class="resume_item">
+								<div class="resume_top">
+									<h4 class="resume_role">B.Tech, Mechanical Engineering</h4>
+									<span class="resume_date">2014 – 2018</span>
+								</div>
+								<p class="resume_meta">Adina Institute of Science and Technology, Sagar, MP</p>
+							</article>
+							<article class="resume_item">
+								<div class="resume_top">
+									<h4 class="resume_role">Full Stack Web Development</h4>
+									<span class="resume_date">Jan 2024</span>
+								</div>
+								<p class="resume_meta">Masai School, Bengaluru</p>
+							</article>
+							<article class="resume_item">
+								<div class="resume_top">
+									<h4 class="resume_role">Senior Secondary (Class XII)</h4>
+									<span class="resume_date">2014</span>
+								</div>
+								<p class="resume_meta">Saraswati Shishu Mandir, Sagar</p>
+							</article>
 						</div>
+					</div>
+				</div>
 
-						<div class="qualification_sections">
-							<!-- ========== Qualification Content 1 ========== -->
-							<div
-								class="qualification_content qualification_active"
-								data-content
-								id="education"
-							>
-								<!-- ========== Qualification 1 ========== -->
+				<div class="certs container">
+					<h3 class="resume_heading"><i class="uil uil-award"></i> Certifications &amp; Achievements</h3>
+					<div class="certs_grid">
+						<a
+							class="cert_card"
+							href="/images/certificates/Full_stack_Developer_Certificate.jpg"
+							target="_blank"
+							rel="noopener"
+						>
+							<div class="cert_thumb">
+								<img
+									src="/images/certificates/Full_stack_Developer_Certificate.jpg"
+									alt="Masai School — Full Stack Web Development Certificate of Completion awarded to Akash Vishwakarma"
+									loading="lazy"
+								/>
+							</div>
+							<div class="cert_body">
+								<h4 class="cert_title">Full Stack Web Development</h4>
+								<p class="cert_issuer">Masai School</p>
+								<ul class="cert_meta">
+									<li><i class="uil uil-calendar-alt"></i> Graduated Nov 2023</li>
+									<li><i class="uil uil-clock"></i> 2160 hours of practical training</li>
+									<li><i class="uil uil-shield-check"></i> Credential ID: MASAI-FW23-0425</li>
+								</ul>
+								<span class="cert_link">View certificate <i class="uil uil-external-link-alt"></i></span>
+							</div>
+						</a>
 
-								<!-- ========== Qualification 2 ========== -->
-								<div class="qualification_data">
-									<div>
-										<h3 class="qualification_title">B.Tech (Mechanical Engineering)</h3>
-										<span class="qualification_subtitle">Adina Institute of Science and Technology, Sagar Madhya Pradesh</span>
-										<div class="qualification_calender">
-											<i class="uil uil-calendar-alt"></i>
-											2014 - 2018
-										</div>
-									</div>
-								</div>
-<br>
-								<!-- ========== Qualification 3 ========== -->
-								<div class="qualification_data">
-									<div>
-										<h3 class="qualification_title">Full Stack Web Development</h3>
-										<span class="qualification_subtitle">Masai School, Bengaluru</span>
-										<div class="qualification_calender">
-											<i class="uil uil-calendar-alt"></i>
-											Jan 2024
-										</div>
-									</div>
-								</div>
-<br>
-								<!-- ========== Qualification 3 ========== -->
-								<div class="qualification_data">
-									<div>
-										<h3 class="qualification_title">Senior Secondary</h3>
-										<span class="qualification_subtitle"
-											>Saraswati Shishu Mandir Sagar</span
-										>
-										<div class="qualification_calender">
-											<i class="uil uil-calendar-alt"></i>
-											2014
-										</div>
-									</div>
-								</div>
+						<a
+							class="cert_card"
+							href="/images/certificates/SFMC_Certificate.jpg"
+							target="_blank"
+							rel="noopener"
+						>
+							<div class="cert_thumb">
+								<img
+									src="/images/certificates/SFMC_Certificate.jpg"
+									alt="HubSpot Academy — Email Marketing Certified certificate awarded to Akash Vishwakarma"
+									loading="lazy"
+								/>
 							</div>
-<br>
+							<div class="cert_body">
+								<h4 class="cert_title">Email Marketing Certified</h4>
+								<p class="cert_issuer">HubSpot Academy</p>
+								<ul class="cert_meta">
+									<li><i class="uil uil-calendar-alt"></i> Valid Jun 2026 – Jul 2028</li>
+									<li><i class="uil uil-envelope-check"></i> Segmentation, deliverability, email design &amp; performance metrics</li>
+									<li><i class="uil uil-shield-check"></i> Code: bdb67a838eeb48fa82c8168ec0643f71</li>
+								</ul>
+								<span class="cert_link">View certificate <i class="uil uil-external-link-alt"></i></span>
 							</div>
-						</div>
+						</a>
+
+						<a
+							class="cert_card"
+							href="/images/Aword/Aword_1.jpg"
+							target="_blank"
+							rel="noopener"
+						>
+							<div class="cert_thumb">
+								<img
+									src="/images/Aword/Aword_1.jpg"
+									alt="WPP Production — Values Champion Award presented to Akash Vishwakarma"
+									loading="lazy"
+								/>
+							</div>
+							<div class="cert_body">
+								<h4 class="cert_title">Values Champion Award</h4>
+								<p class="cert_issuer">WPP Production</p>
+								<ul class="cert_meta">
+									<li><i class="uil uil-calendar-alt"></i> Q1 2026</li>
+									<li><i class="uil uil-trophy"></i> For a positive mindset, solution-oriented thinking, and inspiring confidence during challenges</li>
+								</ul>
+								<span class="cert_link">View award <i class="uil uil-external-link-alt"></i></span>
+							</div>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -379,134 +398,223 @@
 
 			<!-- ========== Skills ========== -->
 			<section class="skills section" id="skills">
-				<h2 class="section_title">Skills & Tools</h2>
+				<div class="section_head container">
+					<span class="section_eyebrow">Skills &amp; Tools</span>
+					<h2 class="section_title">What I work with</h2>
+				</div>
 
 				<div class="skills_container container grid">
 					<div>
-						<!-- ========== Skills 0 - SFMC ========== -->
-					<div class="skills_content skills_open">
-						<div class="skills_header">
-							<i class="uil uil-envelope skills_icon"></i>
-							<div>
-								<h1 class="skills_title">Salesforce Marketing Cloud</h1>
-								<span class="skills_subtitle">1+ year</span>
+						<div class="skills_content skills_open">
+							<div class="skills_header">
+								<i class="uil uil-envelope skills_icon"></i>
+								<div>
+									<h3 class="skills_title">Salesforce Marketing Cloud</h3>
+									<span class="skills_subtitle">2+ years</span>
+								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
 							</div>
-							<i class="uil uil-angle-down skills_arrow"></i>
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Email Studio</h3>
+										<span><i class="uil uil-envelope-check skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Journey Builder</h3>
+										<span><i class="uil uil-map-marker-alt skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">AMPscript</h3>
+										<span><i class="uil uil-code-branch skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Automation Studio</h3>
+										<span><i class="uil uil-setting skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Contact Builder</h3>
+										<span><i class="uil uil-users-alt skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">CloudPages / SSJS</h3>
+										<span><i class="uil uil-cloud-computing skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Content Builder</h3>
+										<span><i class="uil uil-web-grid skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Analytics Builder</h3>
+										<span><i class="uil uil-chart skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">MobileConnect</h3>
+										<span><i class="uil uil-mobile-android skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">eWizard / AEM</h3>
+										<span><i class="uil uil-layers skills-card-img"></i></span>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="skills_list grid">
-							<div class="skills_data skills-card">
-								<div class="skills_titles">
-									<h3 class="skills_name skills-card-name">Email Studio</h3>
-									<span><i class="uil uil-envelope-check skills-card-img"></i></span>
+						<div class="skills_content skills_close">
+							<div class="skills_header">
+								<i class="uil uil-fast-mail skills_icon"></i>
+								<div>
+									<h3 class="skills_title">Email &amp; Execution</h3>
+									<span class="skills_subtitle">Campaign delivery</span>
 								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
 							</div>
-							<div class="skills_data skills-card">
-								<div class="skills_titles">
-									<h3 class="skills_name skills-card-name">Journey Builder</h3>
-									<span><i class="uil uil-map-marker-alt skills-card-img"></i></span>
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Responsive Email Development</h3>
+										<span><i class="uil uil-desktop skills-card-img"></i></span>
+									</div>
 								</div>
-							</div>
-							<div class="skills_data skills-card">
-								<div class="skills_titles">
-									<h3 class="skills_name skills-card-name">AMPscript</h3>
-									<span><i class="uil uil-code-branch skills-card-img"></i></span>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">A/B Testing</h3>
+										<span><i class="uil uil-flask skills-card-img"></i></span>
+									</div>
 								</div>
-							</div>
-							<div class="skills_data skills-card">
-								<div class="skills_titles">
-									<h3 class="skills_name skills-card-name">Automation Studio</h3>
-									<span><i class="uil uil-setting skills-card-img"></i></span>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Audience Segmentation</h3>
+										<span><i class="uil uil-chart-pie skills-card-img"></i></span>
+									</div>
 								</div>
-							</div>
-							<div class="skills_data skills-card">
-								<div class="skills_titles">
-									<h3 class="skills_name skills-card-name">Contact Builder</h3>
-									<span><i class="uil uil-users-alt skills-card-img"></i></span>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">QA Testing</h3>
+										<span><i class="uil uil-check-square skills-card-img"></i></span>
+									</div>
 								</div>
-							</div>
-							<div class="skills_data skills-card">
-								<div class="skills_titles">
-									<h3 class="skills_name skills-card-name">eWizard / AEM</h3>
-									<span><i class="uil uil-layers skills-card-img"></i></span>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Campaign Lifecycle Management</h3>
+										<span><i class="uil uil-refresh skills-card-img"></i></span>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<!-- ========== Skills 1 ========== -->
+						<div class="skills_content skills_close">
+							<div class="skills_header">
+								<i class="uil uil-shield-check skills_icon"></i>
+								<div>
+									<h3 class="skills_title">Compliance &amp; Concepts</h3>
+									<span class="skills_subtitle">Data &amp; deliverability</span>
+								</div>
+								<i class="uil uil-angle-down skills_arrow"></i>
+							</div>
+							<div class="skills_list grid">
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Data Extensions</h3>
+										<span><i class="uil uil-database skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Attribute Groups</h3>
+										<span><i class="uil uil-sitemap skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Triggered Sends</h3>
+										<span><i class="uil uil-bolt skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Deliverability</h3>
+										<span><i class="uil uil-envelope-upload skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">SPF &middot; DKIM &middot; DMARC</h3>
+										<span><i class="uil uil-lock-access skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">GDPR &middot; CAN-SPAM</h3>
+										<span><i class="uil uil-file-shield-alt skills-card-img"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="skills_content skills_close">
 							<div class="skills_header">
 								<i class="uil uil-server-network skills_icon"></i>
 								<div>
-									<h1 class="skills_title">Backend Development</h1>
-									<span class="skills_subtitle">6+ months</span>
+									<h3 class="skills_title">Backend Development</h3>
+									<span class="skills_subtitle">Full-stack foundation</span>
 								</div>
 								<i class="uil uil-angle-down skills_arrow"></i>
 							</div>
-
 							<div class="skills_list grid">
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Java</h3>
 										<span><i class="bx bxl-java skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Spring Boot</h3>
-										<span
-											><i class="bx bxl-spring-boot skills-card-img"></i
-										></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span><i class="bx bxl-spring-boot skills-card-img"></i></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">MySQL</h3>
 										<span><i class="bx bxs-data skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Hibernate</h3>
 										<span><i class="bx bxs-cube-alt skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">SQL</h3>
 										<span><i class="bx bx-data skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 							</div>
 						</div>
-
-						<!-- ========== Skills 2 ========== -->
 						<div class="skills_content skills_close">
 							<div class="skills_header">
-								<i class="uil uil-arrow skills_icon"></i>
+								<i class="uil uil-brackets-curly skills_icon"></i>
 								<div>
-									<h1 class="skills_title">Frontend Development</h1>
-									<span class="skills_subtitle">7+ months</span>
+									<h3 class="skills_title">Frontend Development</h3>
+									<span class="skills_subtitle">Full-stack foundation</span>
 								</div>
 								<i class="uil uil-angle-down skills_arrow"></i>
 							</div>
@@ -516,176 +624,138 @@
 										<h3 class="skills_name skills-card-name">HTML</h3>
 										<span><i class="bx bxl-html5 skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">CSS</h3>
 										<span><i class="bx bxl-css3 skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">JavaScript</h3>
-										<span
-											><i class="bx bxl-javascript skills-card-img"></i
-										></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span><i class="bx bxl-javascript skills-card-img"></i></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Bootstrap</h3>
-										<span
-											><i class="bx bxl-bootstrap skills-card-img"></i
-										></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span><i class="bx bxl-bootstrap skills-card-img"></i></span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
 					<div>
-						<!-- ========== Skills 3 ========== -->
 						<div class="skills_content skills_close">
 							<div class="skills_header">
-								<i class="uil uil-icons skills_icon"></i>
+								<i class="uil uil-wrench skills_icon"></i>
 								<div>
-									<h1 class="skills_title">Other Tech Tools</h1>
-									<span class="skills_subtitle">10+ months</span>
+									<h3 class="skills_title">Tools &amp; Platforms</h3>
+									<span class="skills_subtitle">Daily use</span>
 								</div>
 								<i class="uil uil-angle-down skills_arrow"></i>
 							</div>
-
 							<div class="skills_list grid">
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">VS Code</h3>
-										<span
-											><i class="bx bxl-visual-studio skills-card-img"></i
-										></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span><i class="bx bxl-visual-studio skills-card-img"></i></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
-										<h3 class="skills_name skills-card-name">
-											Spring Tool Suite
-										</h3>
-										<span
-											><i class="bx bxl-spring-boot skills-card-img"></i
-										></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<h3 class="skills_name skills-card-name">Spring Tool Suite</h3>
+										<span><i class="bx bxl-spring-boot skills-card-img"></i></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">GitHub</h3>
-										<span
-											><i class="uil uil-github-alt skills-card-img"></i
-										></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span><i class="uil uil-github-alt skills-card-img"></i></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
-										<h3 class="skills_name skills-card-name">PostMan</h3>
+										<h3 class="skills_name skills-card-name">Postman</h3>
 										<span><i class="bx bxs-pen skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Litmus</h3>
 										<span><i class="uil uil-check-circle skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Email on Acid</h3>
+										<span><i class="uil uil-envelope-check skills-card-img"></i></span>
+									</div>
+								</div>
+								<div class="skills_data skills-card">
+									<div class="skills_titles">
+										<h3 class="skills_name skills-card-name">Veeva Vault</h3>
+										<span><i class="uil uil-archive skills-card-img"></i></span>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- ========== Skills 4 ========== -->
 						<div class="skills_content skills_close">
 							<div class="skills_header">
 								<i class="uil uil-illustration skills_icon"></i>
 								<div>
-									<h1 class="skills_title">Design Tools</h1>
-									<span class="skills_subtitle">2+ years</span>
+									<h3 class="skills_title">Design Tools</h3>
+									<span class="skills_subtitle">Working knowledge</span>
 								</div>
 								<i class="uil uil-angle-down skills_arrow"></i>
 							</div>
-
 							<div class="skills_list grid">
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Adobe Photoshop</h3>
 										<span><i class="bx bxl-adobe skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Canva</h3>
-										<span class="skills-card-img"></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Lightroom</h3>
-										<span class="skills-card-img"></span>
-									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
+										<span></span>
 									</div>
 								</div>
-
 								<div class="skills_data skills-card">
 									<div class="skills_titles">
 										<h3 class="skills_name skills-card-name">Microsoft Excel</h3>
 										<span><i class="bx bxl-microsoft skills-card-img"></i></span>
 									</div>
-									<div class="skills_bar">
-										<span class="skills_percentage"></span>
-									</div>
 								</div>
-
 							</div>
 						</div>
 					</div>
+
+					<a
+						class="skills_snapshot"
+						href="/images/CV_Overview/CV_Overview.jpg"
+						target="_blank"
+						rel="noopener"
+					>
+						<img
+							src="/images/CV_Overview/CV_Overview.jpg"
+							alt="Akash Vishwakarma — one-page SFMC skills overview: modules, languages, tools and concepts"
+							loading="lazy"
+						/>
+						<div class="skills_snapshot-text">
+							<h3>Everything on one page</h3>
+							<p>A visual snapshot of my SFMC modules, languages, tools, technologies and compliance concepts.</p>
+							<span class="skills_snapshot-cta">View full-size <i class="uil uil-external-link-alt"></i></span>
+						</div>
+					</a>
 				</div>
 			</section>
 
@@ -693,320 +763,231 @@
 
 			<!-- ========== Projects ========== -->
 			<section class="portfolio section" id="projects">
-				<h2 class="section_title">Projects</h2>
-				<span class="section_subtitle"
-					>Hey visitor, here is a brief overview of some of my previous
-					work...✍️</span
-				>
-
-				<!-- ========== Project Section with double slide Slider ========== -->
-				<!-- ========== Project 1 Slider ========== -->
-				<div class="portfolio_container container swiper-container">
-					<div class="swiper-wrapper">
-						<div class="portfolio_content grid swiper-slide project-card">
-							<img
-								src="/images/project 1 images/cims.png"
-								alt=""
-								class="portfolio_img"
-							/>
-
-							<div class="portfolio_data">
-								<h3 class="portfolio_title project_title project-title">
-									Crime Information Management System
-								</h3>
-								<p class="portfolio_description project-description">
-									"Introducing an Advanced Crime Management System Developed in Java Core: Empowering Law Enforcement with Enhanced Data Tracking, Management, and Analysis Tools for Safer Communities"
-								</p>
-								<p class="project-tech-stack">
-									<b>Tech Stack : </b>JAVA | JDBC | MYSQL 
-								</p>
-								<a
-									href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_"
-									target="_blank"
-									class="project-github-link button button-flex button-small portfolio_button"
-								>
-									Git Repo.
-									<i class="uil uil-github-alt button_icon"></i>
-								</a>
-								<a
-									href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_#introduction"
-									target="_blank"
-									class="button button-flex button-small portfolio_button project-deployed-link"
-								>
-									Demo
-									<i class="uil uil-external-link-alt button_icon"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-pagination"></div>
+				<div class="section_head container">
+					<span class="section_eyebrow">Portfolio</span>
+					<h2 class="section_title">Selected work</h2>
+					<p class="section_subtitle">
+						A featured Salesforce Marketing Cloud case study, plus full-stack
+						builds from my development training.
+					</p>
 				</div>
 
-				<!-- ========== Project 2 Slider ========== -->
-				<div class="portfolio_container container swiper-container">
-					<div class="swiper-wrapper">
-						<div class="portfolio_content grid swiper-slide project-card">
-							<img
-								src="/images/project 2 images/Customer.png"
-								alt=""
-								class="portfolio_img"
-							/>
-
-							<div class="portfolio_data">
-								<h3 class="portfolio_title project_title project-title">
-									Online Customer Service Support
-								</h3>
-								<p class="portfolio_description project-description">"An Online Customer Service Centre that provides a platform for
-									customers to submit issues, and inquiries which can be
-									resolved by our dedicated support team."
-								</p>
-								<p class="project-tech-stack">
-									<b>Tech Stack : </b>HTML | CSS | JAVASCRIPT | JAVA | HIBERNATE | SPRINGBOOT
-								</p>
-								<a
-									href="https://github.com/akashvishwakarma27/Online_Customer_Service"
-									target="_blank"
-									class="project-github-link button button-flex button-small portfolio_button"
-								>
-									Git Repo.
-									<i class="uil uil-github-alt button_icon"></i>
-								</a>
-								<a
-									href="https://github.com/akashvishwakarma27/Online_Customer_Service#online-customer-service-support"
-									target="_blank"
-									class="button button-flex button-small portfolio_button project-deployed-link"
-								>
-									Demo
-									<i class="uil uil-external-link-alt button_icon"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-pagination"></div>
-				</div>
-
-				<!-- ========== Project 3 Slider ========== -->
-				<div class="portfolio_container container swiper-container">
-					<div class="swiper-wrapper">
-						<div class="portfolio_content grid swiper-slide project-card">
-							<img
-								src="/images/project 3 images/Wonder Park.png"
-								alt=""
-								class="portfolio_img"
-							/>
-
-							<div class="portfolio_data">
-								<h3 class="portfolio_title project_title project-title">
-									Wonder Park
-								</h3>
-								<p class="portfolio_description project-description">
-									"Wondr Wrod: A Java Spring Boot-Powered Wonder Park Web App Enhancing Visitor Experience with Ticketing, Trip Planning, and Attraction Information."
-								</p>
-								<p class="project-tech-stack">
-									<b>Tech Stack : </b>JAVA | HIBERNATE | SPRINGBOOT
-								</p>
-								<a
-									href="https://github.com/akashvishwakarma27/Wonder_Park"
-									target="_blank"
-									class="project-github-link button button-flex button-small portfolio_button"
-								>
-									Git Repo.
-									<i class="uil uil-github-alt button_icon"></i>
-								</a>
-								<a
-									href="https://github.com/akashvishwakarma27/Wonder_Park#acknowledgements"
-									target="_blank"
-									class="button button-flex button-small portfolio_button project-deployed-link"
-								>
-									Demo
-									<i class="uil uil-external-link-alt button_icon"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-pagination"></div>
-				</div>
-
-				            <!-- ========== Project 3 Slider ========== -->
-							<div class="portfolio_container container swiper-container">
-								<div class="swiper-wrapper">
-									<div class="portfolio_content grid swiper-slide project-card">
-										<img src="/images/project 6 images/GroceryWala.png" alt="" class="portfolio_img">
-				
-										<div class="portfolio_data">
-											<h3 class="portfolio_title project_title project-title">GroceryWala.com</h3>
-											<p class="portfolio_description project-description">A clone of the Nature's Basket website
-												which is an onine supermarket and premium grocery store in India.</p>
-											<p class="project-tech-stack"><b>Tech Stack : </b>HTML5 | CSS | JAVASCRIPT</p>
-											<a href="https://github.com/akashvishwakarma27/GroceryWala.com" target="_blank"
-												class="project-github-link button button-flex button-small portfolio_button">
-												Git Repo.
-												<i class="uil uil-github-alt button_icon"></i>
-											</a>
-											<a href="https://peaceful-bonbon-66f157.netlify.app/" target="_blank"
-												class="button button-flex button-small portfolio_button project-deployed-link">
-												Demo
-												<i class="uil uil-external-link-alt button_icon"></i>
-											</a>
-										</div>
-									</div>
-				
-									<div class="portfolio_content grid swiper-slide project-card">
-										<img src="/images/project 6 images/products.png" alt="" class="portfolio_img">
-				
-										<div class="portfolio_data">
-											<h3 class="portfolio_title project_title project-title">GroceryWala.com</h3>
-											<p class="portfolio_description project-description">In addition to the login and
-												registration functionalities, customers can view, add products to their wishlist and
-												shopping basket, and continue with the payment.</p>
-											<a href="https://github.com/akashvishwakarma27/GroceryWala.com" target="_blank"
-												class="project-github-link button button-flex button-small portfolio_button">
-												Git Repo.
-												<i class="uil uil-github-alt button_icon"></i>
-											</a>
-											<a href="https://preeminent-beijinho-75e1b4.netlify.app/" target="_blank"
-												class="button button-flex button-small portfolio_button project-deployed-link">
-												Demo
-												<i class="uil uil-external-link-alt button_icon"></i>
-											</a>
-										</div>
-									</div>
+				<!-- ========== Featured SFMC case study ========== -->
+				<article class="case container reveal">
+					<div class="case_media">
+						<span class="case_badge">Featured &middot; SFMC case study</span>
+						<div class="case_mock" aria-hidden="true">
+							<div class="case_mock-email">
+								<div class="case_mock-bar">
+									<span></span><span></span><span></span>
 								</div>
-				
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
-								<div class="swiper-pagination"></div>
+								<div class="case_mock-body">
+									<div class="case_mock-logo">VITALIS</div>
+									<div class="case_mock-h"></div>
+									<div class="case_mock-l"></div>
+									<div class="case_mock-l short"></div>
+									<div class="case_mock-tile"></div>
+									<div class="case_mock-cta">Read this month&rsquo;s articles</div>
+								</div>
 							</div>
+							<span class="case_node case_node--1">Journey Builder</span>
+							<span class="case_node case_node--2">AMPscript</span>
+							<span class="case_node case_node--3">CloudPage · SSJS</span>
+						</div>
+					</div>
 
-				<!-- ========== Project 4 Slider ========== -->
+					<div class="case_body">
+						<h3 class="case_title">Vitalis — Patient Engagement Lifecycle on Salesforce Marketing Cloud</h3>
+						<p class="case_desc">
+							A full lifecycle-marketing build for a fictional pharma brand — recreating,
+							end to end, the SFMC patterns I ship for global pharmaceutical and
+							life-sciences clients (real client work is under NDA).
+						</p>
+						<ul class="case_points">
+							<li>Modular responsive email template — hybrid layout, dark-mode, bulletproof buttons, 98%+ cross-client rendering</li>
+							<li>Preference-centre CloudPage in SSJS — reads / writes Data Extensions, double opt-in, one-click unsubscribe</li>
+							<li>Four journeys: Welcome · Nurture · Re-engagement · Transactional — Decision Splits, Wait Activities, Exit Criteria</li>
+							<li>Nightly Automation Studio: SQL Query Activities → File Transfer → Import → triggered send</li>
+							<li>AMPscript + SQL personalization by specialty, region, language &amp; next appointment</li>
+							<li>Compliance baked in — GDPR consent log, CAN-SPAM, SPF / DKIM / DMARC, and a Veeva-style MLR review gate</li>
+						</ul>
+						<ul class="case_tags">
+							<li>SFMC</li><li>AMPscript</li><li>SSJS</li><li>SQL</li>
+							<li>Journey Builder</li><li>Automation Studio</li><li>CloudPages</li><li>Litmus</li>
+						</ul>
+						<div class="case_actions">
+							<a href="https://github.com/akashvishwakarma27/vitalis-sfmc#readme" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+								Read the case study <i class="uil uil-file-alt button_icon"></i>
+							</a>
+							<a href="https://github.com/akashvishwakarma27/vitalis-sfmc" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+								View on GitHub <i class="uil uil-github-alt button_icon"></i>
+							</a>
+						</div>
+					</div>
+				</article>
+
+				<h3 class="portfolio_also container">Also built</h3>
+
+				<!-- ========== Projects Carousel ========== -->
 				<div class="portfolio_container container swiper-container">
 					<div class="swiper-wrapper">
-						<div class="portfolio_content grid swiper-slide project-card">
-							<img
-								src="/images/project 4 images/The Fashion Store.png"
-								alt=""
-								class="portfolio_img"
-							/>
-
+						<!-- Project 1 -->
+						<div class="portfolio_content swiper-slide project-card">
+							<div class="portfolio_img-box">
+								<img src="/images/project 1 images/cims.png" alt="Crime Information Management System" class="portfolio_img" />
+							</div>
 							<div class="portfolio_data">
-								<h3 class="portfolio_title project_title project-title">
-									The Souled Store
-								</h3>
+								<h3 class="portfolio_title project-title">Crime Information Management System</h3>
 								<p class="portfolio_description project-description">
-									"The Souled Store: Shop trendy apparel, accessories, and merchandise. Express your fandom with unique designs and top-notch quality. Unleash your style!"
+									An advanced crime-management system built in Java Core — data tracking, record management, and analysis tools for law enforcement.
 								</p>
-								<p class="project-tech-stack">
-									<b>Tech Stack : </b>HTML | CSS | JAVASCRIPT
-								</p>
-								<a
-									href="https://github.com/akashvishwakarma27/The_Souled_Store"
-									target="_blank"
-									class="project-github-link button button-flex button-small portfolio_button"
-								>
-									Git Repo.
-									<i class="uil uil-github-alt button_icon"></i>
-								</a>
-								<a
-									href="https://imaginative-boba-7705ee.netlify.app/"
-									target="_blank"
-									class="button button-flex button-small portfolio_button project-deployed-link"
-								>
-									Demo
-									<i class="uil uil-external-link-alt button_icon"></i>
-								</a>
+								<ul class="project-tags">
+									<li>Java</li><li>JDBC</li><li>MySQL</li>
+								</ul>
+								<div class="portfolio_actions">
+									<a href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+										Code <i class="uil uil-github-alt button_icon"></i>
+									</a>
+									<a href="https://github.com/akashvishwakarma27/Crime_Information_Management_system_#introduction" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+										Details <i class="uil uil-external-link-alt button_icon"></i>
+									</a>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-pagination"></div>
-				</div>
-
-				<!-- ========== Project 5 Slider ========== -->
-				<div class="portfolio_container container swiper-container">
-					<div class="swiper-wrapper">
-						<div class="portfolio_content grid swiper-slide project-card">
-							<img
-								src="/images/project 5 images/Shoes locker.png"
-								alt=""
-								class="portfolio_img"
-							/>
-
+						<!-- Project 2 -->
+						<div class="portfolio_content swiper-slide project-card">
+							<div class="portfolio_img-box">
+								<img src="/images/project 2 images/Customer.png" alt="Online Customer Service Support" class="portfolio_img" />
+							</div>
 							<div class="portfolio_data">
-								<h3 class="portfolio_title project_title project-title">
-									Foot Locker
-								</h3>
-								<p class="portfolio_description project-description">"Foot Locker: Reliable platform offering authentic shoes and trusted brands."
+								<h3 class="portfolio_title project-title">Online Customer Service Support</h3>
+								<p class="portfolio_description project-description">
+									A support portal where customers submit issues and inquiries that are routed to and resolved by a dedicated support team.
 								</p>
-								<p class="project-tech-stack">
-									<b>Tech Stack : </b> HTML5 | CSS
-									| JAVASCRIPT
+								<ul class="project-tags">
+									<li>Java</li><li>Spring Boot</li><li>Hibernate</li><li>JavaScript</li>
+								</ul>
+								<div class="portfolio_actions">
+									<a href="https://github.com/akashvishwakarma27/Online_Customer_Service" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+										Code <i class="uil uil-github-alt button_icon"></i>
+									</a>
+									<a href="https://github.com/akashvishwakarma27/Online_Customer_Service#online-customer-service-support" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+										Details <i class="uil uil-external-link-alt button_icon"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 3 -->
+						<div class="portfolio_content swiper-slide project-card">
+							<div class="portfolio_img-box">
+								<img src="/images/project 3 images/Wonder Park.png" alt="Wonder Park" class="portfolio_img" />
+							</div>
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project-title">Wonder Park</h3>
+								<p class="portfolio_description project-description">
+									A Spring Boot web app for a theme park — ticketing, trip planning, and attraction information to improve the visitor experience.
 								</p>
-								<a
-									href="https://github.com/akashvishwakarma27/Foot_Locker"
-									target="_blank"
-									class="project-github-link button button-flex button-small portfolio_button"
-								>
-									Git Repo.
-									<i class="uil uil-github-alt button_icon"></i>
-								</a>
-								<a
-									href="https://shimmering-sopapillas-5e41d1.netlify.app/"
-									target="_blank"
-									class="button button-flex button-small portfolio_button project-deployed-link"
-								>
-									Demo
-									<i class="uil uil-external-link-alt button_icon"></i>
-								</a>
+								<ul class="project-tags">
+									<li>Java</li><li>Spring Boot</li><li>Hibernate</li>
+								</ul>
+								<div class="portfolio_actions">
+									<a href="https://github.com/akashvishwakarma27/Wonder_Park" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+										Code <i class="uil uil-github-alt button_icon"></i>
+									</a>
+									<a href="https://github.com/akashvishwakarma27/Wonder_Park#acknowledgements" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+										Details <i class="uil uil-external-link-alt button_icon"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 4 -->
+						<div class="portfolio_content swiper-slide project-card">
+							<div class="portfolio_img-box">
+								<img src="/images/project 6 images/GroceryWala.png" alt="GroceryWala.com" class="portfolio_img" />
+							</div>
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project-title">GroceryWala.com</h3>
+								<p class="portfolio_description project-description">
+									A clone of Nature's Basket — an online supermarket and premium grocery store, with wishlist, cart, and checkout flows.
+								</p>
+								<ul class="project-tags">
+									<li>HTML5</li><li>CSS</li><li>JavaScript</li>
+								</ul>
+								<div class="portfolio_actions">
+									<a href="https://github.com/akashvishwakarma27/GroceryWala.com" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+										Code <i class="uil uil-github-alt button_icon"></i>
+									</a>
+									<a href="https://peaceful-bonbon-66f157.netlify.app/" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+										Live Demo <i class="uil uil-external-link-alt button_icon"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 5 -->
+						<div class="portfolio_content swiper-slide project-card">
+							<div class="portfolio_img-box">
+								<img src="/images/project 4 images/The Fashion Store.png" alt="The Souled Store" class="portfolio_img" />
+							</div>
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project-title">The Souled Store</h3>
+								<p class="portfolio_description project-description">
+									A responsive e-commerce front end for trendy apparel, accessories, and merchandise with product browsing and cart.
+								</p>
+								<ul class="project-tags">
+									<li>HTML</li><li>CSS</li><li>JavaScript</li>
+								</ul>
+								<div class="portfolio_actions">
+									<a href="https://github.com/akashvishwakarma27/The_Souled_Store" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+										Code <i class="uil uil-github-alt button_icon"></i>
+									</a>
+									<a href="https://imaginative-boba-7705ee.netlify.app/" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+										Live Demo <i class="uil uil-external-link-alt button_icon"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Project 6 -->
+						<div class="portfolio_content swiper-slide project-card">
+							<div class="portfolio_img-box">
+								<img src="/images/project 5 images/Shoes locker.png" alt="Foot Locker" class="portfolio_img" />
+							</div>
+							<div class="portfolio_data">
+								<h3 class="portfolio_title project-title">Foot Locker</h3>
+								<p class="portfolio_description project-description">
+									A shoe-retail storefront clone with catalog browsing, product pages, and a clean responsive layout.
+								</p>
+								<ul class="project-tags">
+									<li>HTML5</li><li>CSS</li><li>JavaScript</li>
+								</ul>
+								<div class="portfolio_actions">
+									<a href="https://github.com/akashvishwakarma27/Foot_Locker" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button">
+										Code <i class="uil uil-github-alt button_icon"></i>
+									</a>
+									<a href="https://shimmering-sopapillas-5e41d1.netlify.app/" target="_blank" rel="noopener" class="button button-flex button-small portfolio_button button--ghost">
+										Live Demo <i class="uil uil-external-link-alt button_icon"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-pagination"></div>
 				</div>
-			</section>
 
-			<hr class="hr_break_line" />
-
-			<!-- ========== Statistics ========== -->
-			<section class="statistics section" id="statistics">
-				<h2 class="section_title">Statistics</h2>
-				<span class="section_subtitle">My Github Statistics</span>
-				<div class="statistics_container container grid">
-					<img
-						id="github-stats-card"
-						src="https://github-readme-stats.vercel.app/api?username=akashvishwakarma27&theme=city_light&hide_border=true&include_all_commits=true&count_private=true"
-						alt="github-stats-card"
-					/>
-					<img
-						id="github-top-langs"
-						src="https://github-readme-stats.vercel.app/api/top-langs/?username=akashvishwakarma27&langs_count=4&theme=city_light&hide_border=true&include_all_commits=true&count_private=true&layout=compact"
-						alt="github-top-langs"
-					/>
-					<img
-						id="github-streak-stats"
-						src="https://github-readme-streak-stats.herokuapp.com/?user=akashvishwakarma27&ring=5094f0&currStreakLabel=5094f0&fire=5094f0&theme=city_light&hide_border=true"
-						alt="github-streak-stats"
-					/>
-				</div>
-				
-				<div style="margin-top: 3rem;">
-					<span class="section_subtitle">Github Calendar</span>
-					<div class="react-activity-calendar calendar">
-						<!-- GitHub Calendar will be rendered here -->
-					</div>
+				<div class="portfolio_controls container">
+					<button type="button" class="portfolio_nav-btn portfolio_prev" aria-label="Previous project">
+						<i class="uil uil-arrow-left"></i>
+						<span>Prev</span>
+					</button>
+					<div class="portfolio_pagination swiper-pagination"></div>
+					<button type="button" class="portfolio_nav-btn portfolio_next" aria-label="Next project">
+						<span>Next</span>
+						<i class="uil uil-arrow-right"></i>
+					</button>
 				</div>
 			</section>
 
@@ -1014,7 +995,10 @@
 
 			<!-- ========== Contact ========== -->
 			<section class="contact section" id="contact">
-				<h2 class="section_title">Contact Me</h2>
+				<div class="section_head container">
+					<span class="section_eyebrow">Contact</span>
+					<h2 class="section_title">Let's build something</h2>
+				</div>
 
 				<div class="contact_container container grid">
 					<div>
@@ -1070,6 +1054,7 @@
 						</div>
 					</div>
 					<form
+						id="contact-form"
 						action="https://formspree.io/f/mwkjzwvn"
 						method="post"
 						class="contact_form grid"
@@ -1077,30 +1062,33 @@
 						<div class="contact_inputs grid">
 							<div class="contact_content">
 								<label for="name" class="contact_label">Name</label>
-								<input name="name" type="text" class="contact_input" />
+								<input id="name" name="name" type="text" class="contact_input" placeholder="Your name" required />
 							</div>
 							<div class="contact_content">
 								<label for="email" class="contact_label">Email</label>
 								<input
+									id="email"
 									name="email"
 									type="email"
 									class="contact_input"
+									placeholder="you@example.com"
 									required
 								/>
 							</div>
 						</div>
 						<div class="contact_content">
-							<label for="project" class="contact_label">Project</label>
-							<input name="project" type="text" class="contact_input" />
+							<label for="project" class="contact_label">Subject</label>
+							<input id="project" name="project" type="text" class="contact_input" placeholder="What's this about?" />
 						</div>
 						<div class="contact_content">
 							<label for="message" class="contact_label">Message</label>
 							<textarea
+								id="message"
 								name="message"
-								id=""
-								cols="0"
 								rows="7"
 								class="contact_input"
+								placeholder="Write your message…"
+								required
 							></textarea>
 						</div>
 						<div>
@@ -1109,21 +1097,24 @@
 								<i class="uil uil-message button_icon"></i>
 							</button>
 						</div>
+						<p id="contact-status" class="contact_status" role="status" aria-live="polite" hidden></p>
 					</form>
 				</div>
 			</section>
 
 			<hr class="hr_break_line" />
 
-			<span class="section_subtitle">🎯 My North Star 🎯</span>
-			<p>
-				Above all, I'm on a relentless pursuit to be the happiest, most
-				successful, and finest rendition of myself, with a heart brimming with
-				purpose.
-			</p>
+			<blockquote class="northstar container">
+				<span class="northstar_label">My North Star</span>
+				<p>
+					Above all, I'm on a relentless pursuit to be the happiest, most
+					successful, and finest rendition of myself, with a heart brimming
+					with purpose.
+				</p>
+			</blockquote>
 
 			<hr class="hr_break_line" />
-		
+
 
 		<!-- ========== FOOTER ========== -->
 		<footer class="footer">
@@ -1132,7 +1123,7 @@
 				<div>
 					<div class="footer_container container grid">
 						<div>
-							<h1 class="footer_title">Akash Vishwakarma</h1>
+							<p class="footer_title">Akash Vishwakarma</p>
 							<span class="footer_subtitle">Email Developer | Salesforce Marketing Cloud (SFMC)</span>
 						</div>
 						<div class="footer_socials">
@@ -1155,7 +1146,7 @@
 								target="_blank"
 								class="footer_social"
 							>
-								<i class="uil uil-linkedin-alt"></i>
+								<i class="uil uil-twitter-alt"></i>
 							</a>
 						</div>
 					</div>
@@ -1175,7 +1166,6 @@
 		<script src="/script/script.js"></script>
 		<script src="/script/swiper-bundle.min.js"></script>
 		<script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
-		<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 		<script src="https://unpkg.com/scrollreveal"></script>
 
 		<!-- ==================== AUTO-TYPE SCRIPT ==================== -->
@@ -1194,40 +1184,25 @@
 
 		<!-- ==================== PROJECT SLIDER ==================== -->
 		<script>
-			let swiperPortfolio = new Swiper('.swiper-container', {
-				cssMode: true,
+			const swiperPortfolio = new Swiper('.portfolio_container', {
 				loop: true,
-
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				mousewheel: true,
-				keyboard: true,
-			})
-
-			var swiper = new Swiper('.mySwiper', {
-				direction: 'vertical',
+				spaceBetween: 24,
 				slidesPerView: 1,
-				spaceBetween: 30,
-				mousewheel: true,
+				grabCursor: true,
+				keyboard: { enabled: true },
+				autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+				navigation: {
+					nextEl: '.portfolio_next',
+					prevEl: '.portfolio_prev',
+				},
 				pagination: {
-					el: '.swiper-pagination',
+					el: '.portfolio_pagination',
 					clickable: true,
 				},
-			})
-		</script>
-
-		<!-- ==================== GITHUB CALENDER ==================== -->
-		<script>
-			GitHubCalendar('.calendar', 'akashvishwakarma27', {
-				responsive: true,
-				global_stats: true,
-				tooltips: true,
+				breakpoints: {
+					700: { slidesPerView: 2 },
+					1100: { slidesPerView: 3 },
+				},
 			})
 		</script>
 
@@ -1235,10 +1210,13 @@
 		<script>
 			const sr = ScrollReveal({
 				origin: 'top',
-				distance: '50px',
-				duration: 2000,
-				// reset: true
+				distance: '32px',
+				duration: 650,
+				easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+				cleanup: true,
 			})
+
+			sr.reveal('.section_head', { delay: 100 })
 
 			sr.reveal('.home_data', { delay: 200 })
 			sr.reveal('.home_img', { delay: 200 })
@@ -1246,21 +1224,18 @@
 			sr.reveal('.home_social-icon', { interval: 100 })
 			sr.reveal('.home_scroll', { delay: 200 })
 
-			sr.reveal('.about_img', { delay: 200 })
-			sr.reveal('.about_data', { delay: 200 })
-			sr.reveal('.about_info', { interval: 200 })
+			sr.reveal('.about_img', { delay: 150 })
+			sr.reveal('.about_data', { delay: 150 })
+			sr.reveal('.about_info > div', { interval: 90 })
 			sr.reveal('.about_buttons', { interval: 100 })
-			sr.reveal('.qualification', { delay: 200 })
+			sr.reveal('.resume_col', { interval: 120 })
+			sr.reveal('.cert_card', { interval: 100 })
 
-			sr.reveal('.skills_container', {})
-			sr.reveal('.skills_content', { delay: 200 })
-			sr.reveal('.skills_header', { interval: 100 })
+			sr.reveal('.skills_content', { interval: 90 })
+			sr.reveal('.skills_snapshot', { delay: 150 })
 
-			sr.reveal('.section_subtitle', { delay: 200 })
-			sr.reveal('.portfolio_container', { delay: 200 })
-
-			sr.reveal('.statistics_container>img', { interval: 100 })
-			sr.reveal('.calendar', { delay: 200 })
+			sr.reveal('.section_subtitle', { delay: 150 })
+			sr.reveal('.case', { delay: 150 })
 
 			sr.reveal('.contact_container', {})
 			sr.reveal('.contact_information', { interval: 100 })
