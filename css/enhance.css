@@ -1473,17 +1473,168 @@ img {
 
 /* resume timeline: tighter on phones */
 @media screen and (max-width: 480px) {
-	.resume_timeline {
-		padding-left: 1.3rem;
-	}
-	.resume_item::before {
-		left: -1.3rem;
-	}
 	.resume_top {
 		flex-direction: column;
 		gap: 0.35rem;
 	}
-	.resume_date {
-		align-self: flex-start;
+}
+
+/* =====================================================================
+   Mobile: centre-align all content
+   ===================================================================== */
+@media screen and (max-width: 700px) {
+	/* hero */
+	.home_data,
+	.home_title,
+	.home_subtitle,
+	.home_description {
+		text-align: center;
+	}
+	.home_description {
+		margin-inline: auto;
+	}
+	.btn_container {
+		justify-content: center;
+	}
+
+	/* about */
+	.about_container {
+		text-align: center;
+	}
+	.about_img {
+		align-self: center;
+		margin-inline: auto;
+	}
+	.about_description,
+	.about_text p {
+		text-align: center;
+	}
+	.about_info {
+		justify-content: center;
+	}
+	.about_buttons {
+		justify-content: center;
+	}
+
+	/* experience / education timeline -> centred, no rail */
+	.resume_heading {
+		justify-content: center;
+	}
+	.resume_timeline {
+		padding-left: 0;
+	}
+	.resume_timeline::before {
+		display: none;
+	}
+	.resume_item::before {
+		display: none;
+	}
+	.resume_item {
+		text-align: center;
+	}
+	.resume_top {
+		justify-content: center;
+		align-items: center;
+	}
+	.resume_points {
+		display: block;
+	}
+	.resume_points li {
+		padding-left: 0;
+		text-align: center;
+	}
+	.resume_points li::before {
+		display: none;
+	}
+	.resume_certs {
+		justify-items: center;
+	}
+	.resume_certs li {
+		padding-left: 0;
+		text-align: center;
+	}
+	.resume_certs li::before {
+		position: static;
+		margin-right: 0.35rem;
+	}
+
+	/* certifications & achievements cards */
+	.cert_body {
+		text-align: center;
+		align-items: center;
+	}
+	.cert_meta li {
+		justify-content: center;
+	}
+
+	/* skills accordion */
+	.skills_header {
+		justify-content: center;
+		text-align: center;
+	}
+	.skills_header > div {
+		flex: 0 1 auto;
+	}
+	.skills_arrow {
+		margin-left: 0.5rem !important;
+	}
+	.skills_titles {
+		justify-content: center !important;
+	}
+	.skills_snapshot {
+		flex-direction: column;
+		text-align: center;
+	}
+	.skills_snapshot-cta {
+		justify-content: center;
+	}
+
+	/* projects */
+	.portfolio_content.project-card .portfolio_data {
+		text-align: center;
+		align-items: center;
+	}
+	.project-tags {
+		justify-content: center;
+	}
+	.portfolio_actions {
+		justify-content: center;
+	}
+
+	/* featured case study */
+	.case_body {
+		text-align: center;
+		align-items: center;
+	}
+	.case_points {
+		display: block;
+	}
+	.case_points li {
+		padding-left: 0;
+		text-align: center;
+	}
+	.case_points li::before {
+		display: none;
+	}
+	.case_tags,
+	.case_actions {
+		justify-content: center;
+	}
+
+	/* contact */
+	.contact_message {
+		text-align: center;
+	}
+	.contact_information {
+		justify-content: center;
+		text-align: center;
+	}
+
+	/* north star quote */
+	.northstar {
+		border-left: 0;
+		border-top: 3px solid var(--first-color);
+		border-radius: 0.75rem;
+		text-align: center;
 	}
 }
