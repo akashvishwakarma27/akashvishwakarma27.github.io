@@ -1095,20 +1095,22 @@ a.cert_card:hover {
 	box-shadow: rgba(37, 120, 196, 0.22) 0px 16px 34px -10px;
 }
 .cert_thumb {
-	aspect-ratio: 16 / 10;
+	aspect-ratio: 4 / 3;
 	overflow: hidden;
+	padding: 0.75rem;
 	background: var(--input-color);
 	border-bottom: 1px solid var(--e-border);
 }
 .cert_thumb img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	object-position: top center;
+	object-fit: contain;
+	object-position: center;
+	border-radius: 0.3rem;
 	transition: transform 0.4s ease;
 }
 a.cert_card:hover .cert_thumb img {
-	transform: scale(1.04);
+	transform: scale(1.03);
 }
 .cert_thumb--ph {
 	display: grid;
@@ -1359,12 +1361,7 @@ a.cert_card:hover .cert_thumb img {
 }
 @media screen and (max-width: 480px) {
 	.skills_snapshot {
-		gap: 1rem;
 		padding: 0.9rem;
-	}
-	.skills_snapshot img {
-		width: 66px;
-		height: 92px;
 	}
 }
 
@@ -1584,6 +1581,16 @@ img {
 	.skills_snapshot {
 		flex-direction: column;
 		text-align: center;
+		gap: 1rem;
+		padding: 1rem;
+	}
+	.skills_snapshot img {
+		width: 100%;
+		height: auto;
+		max-width: 380px;
+		aspect-ratio: auto;
+		object-fit: contain;
+		margin-inline: auto;
 	}
 	.skills_snapshot-cta {
 		justify-content: center;
