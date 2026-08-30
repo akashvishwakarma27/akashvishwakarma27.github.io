@@ -833,9 +833,11 @@ textarea.contact_input {
 
 .about_img {
 	width: 300px;
-	max-height: 420px;
-	object-fit: cover;
-	object-position: top center;
+	max-width: 100%;
+	height: auto;
+	max-height: none;
+	object-fit: contain;
+	align-self: flex-start;
 	border: 1px solid var(--e-border);
 	border-radius: 1.25rem;
 	box-shadow: var(--e-shadow-soft) 0px 12px 34px 0px;
